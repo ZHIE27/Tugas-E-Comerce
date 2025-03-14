@@ -1,126 +1,76 @@
-import React, { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Search, Bell, Heart, ShoppingCart } from "lucide-react";
-import logo from "../assets/LOGO.png";
+import { Menu, X } from "lucide-react";
+import logo from "/assets/logo/Grasfam.svg";
+import data from "./data/data.json";
 
 export default function Navbar() {
-  const [currency, setCurrency] = useState("USD");
-  const [language, setLanguage] = useState("English");
   const [active, setActive] = useState("Home");
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <>
-      {/* Top Navbar */}
-      <nav className="bg-[#1D2026] text-sm text-gray-400 px-8 flex justify-between items-center">
-        <div className="hidden md:flex gap-8">
-          {["Home", "Courses", "About", "Contact", "Become an Instructor"].map(
-            (name) => (
-              <Link
-                key={name}
-                to="/"
-                className={`text-sm px-2 ${
-                  active === name
-                    ? "text-white shadow-[inset_0px_2px_0px_0px_#FF6636]"
-                    : "text-gray-400"
-                }`}
-                onClick={() => setActive(name)}
-              >
-                {name}
-              </Link>
-            )
-          )}
-        </div>
-        <div className="hidden md:flex space-x-4">
-          <select
-            className="bg-[#1D2026] p-2 text-gray-400 border-none focus:outline-none"
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
-          >
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="INR">INR</option>
-          </select>
-          <select
-            className="bg-[#1D2026] p-2 text-gray-400 border-none focus:outline-none"
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-          >
-            <option value="English">English</option>
-            <option value="Spanish">Spanish</option>
-            <option value="French">French</option>
-          </select>
-        </div>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-white md:hidden"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </nav>
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="bg-[#1D2026] text-gray-400 py-4 flex flex-col items-center gap-4 md:hidden">
-          {["Home", "Courses", "About", "Contact", "Become an Instructor"].map(
-            (name) => (
-              <Link
-                key={name}
-                to="/"
-                className={`text-sm font-medium ${
-                  active === name ? "text-white" : "text-gray-400"
-                }`}
-                onClick={() => {
-                  setActive(name);
-                  setIsOpen(false);
-                }}
-              >
-                {name}
-              </Link>
-            )
-          )}
+        <div ref={menuRef} className="rounded-md bg-cyan-200 w-[50%] fixed z-10 text-gray-400 items-start py-4 flex flex-col gap-4 md:hidden">
+          {data.navbar.links.map((link, index) => (
+            <Link
+              key={index}
+              to={link.toLowerCase() === "home" ? "/" : `/${link.toLowerCase().replace(/\s+/g, '-')}`}
+              className={`ms-4 text-sm hover:bg-amber-400 rounded-md hover:text-white block w-[80%] p-1.5 font-medium ${active === link ? "text-white" : "text-gray-400"}`}
+              onClick={() => {
+                setActive(link);
+                setIsOpen(false);
+              }}
+            >
+              {link}
+            </Link>
+          ))}
         </div>
       )}
-      {/* Bottom Navbar */}
-      <nav className="bg-white border-b border-[#E9EAF0] px-8 py-5 gap-4 flex justify-between items-center">
+
+      {/* Navbar */}
+      <nav className="bg-slate-100 border-b border-[#E9EAF0] px-8 py-5 gap-4 flex justify-between items-center">
+        {/* Links */}
+        <div className="text-sm text-gray-400 px-8 flex justify-between items-center">
+          <div className="hidden md:flex gap-8">
+            {data.navbar.links.map((link, index) => (
+              <Link
+                key={index}
+                to={link.toLowerCase() === "home" ? "/" : `/${link.toLowerCase().replace(/\s+/g, '-')}`}
+                className={`text-sm px-2 ${active === link ? "text-black shadow-[inset_0px_2px_0px_0px_#FF6636]" : "text-gray-400"}`}
+                onClick={() => setActive(link)}
+              >
+                {link}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button onClick={() => setIsOpen(!isOpen)} className="text-black md:hidden">
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img src={logo} alt="LOGO" className="h-8 w-auto" />
-        </div>
-
-        {/* Browse Dropdown */}
-        <div className="flex items-center border p-1.5 px-4 border-gray-300">
-          <select
-            className=" text-gray-500 border-none focus:outline-none"
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-          >
-            <option value="English">Browse</option>
-            <option value="Spanish">Browse</option>
-            <option value="French">Browse</option>
-          </select>
-        </div>
-
-        {/* Search Bar */}
-        <div className="flex items-center mr-auto border border-gray-300 overflow-hidden w-[30%] max-w-md">
-          <button className=" p-1 text-gray-500">
-            <Search size={18} />
-          </button>
-          <input
-            type="text"
-            className="p-1.5 w-full outline-none"
-            placeholder="Search..."
-          />
-        </div>
-        {/* Icons & Buttons */}
-        <div className="flex items-center gap-6">
-          <Bell className="text-gray-500 cursor-pointer" size={18} />
-          <Heart className="text-gray-500 cursor-pointer" size={18} />
-          <ShoppingCart className="text-gray-500 cursor-pointer" size={18} />
-          <button className="bg-[#FFEEE8] text-[#FF6636] px-4 py-1.5 ">
-            Create Account
-          </button>
-          <button className=" bg-[#FF6636] text-white px-4 py-1.5">
-            Sign In
-          </button>
+          <img src={logo} alt="LOGO" className="h-8 transform scale-[4] w-auto me-5" />
         </div>
       </nav>
     </>

@@ -1,0 +1,149 @@
+{
+    "home":{
+        "title1": "Explore the World!",
+        "title2": "Making Every ",
+        "title3": "Journey",
+        "title4": "Memorable",
+        "subTitle": "Let's join with Grasfam!",
+        "button": "start",
+        "bgURL": "/assets/hero2.jpg",
+        "img1" : "/assets/homeAsset/womanhome.png",
+        "icon": "/assets/homeAsset/paperplane.png"
+    },
+    "navbar": {
+        "links" : ["Home", "Contact", "Services", "About", "Pricing"]
+    },
+    "bestServices": {
+        "title": "We Offer Best Services",
+        "iconTitle": "/assets/tourPackages/servicesicon.png",
+        "icon" : "/assets/tourPackages/plane2.png",
+        "bgContent": "/public/assets/tourPackages/bg-cloud.jpg",
+            "items": [
+            { "name": "Calculated Weather", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/satelite.png" },
+            { "name": "Best Flights", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/plane.png" },
+            { "name": "Local Events", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/microphone.png" },
+            { "name": "Customization", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/gear.png" }
+        ]
+    },
+    "discountVoucher": {
+        "title": "Discount First Travel",
+        "icon": "/assets/discount/discounticon.png",
+        "voucher": [
+        {
+        "voucherTitle": "Free Voucher Worth $50",
+        "imgUrl": "/assets/discount/voucher.png",
+        "desc": "Book your first ticket and receive a Rp50,000 voucher for your next trip!",
+        "discount": "$50 Voucher",
+        "terms": "Voucher can be used for the next booking. Valid until the end of the month."
+            },
+            {
+                "voucherTitle": "50% Discount on First Booking!",
+                "imgUrl": "/assets/discount/voucher.png",
+                "desc": "Get a 50% discount on your first travel ticket. Don't miss this opportunity!",
+                "discount": "50% Discount",
+                "terms": "Valid for first-time bookings only. Terms & conditions apply."
+            }
+        ]
+    },
+    "travelPackages": {
+        "icon": "/assets/travelPackages/promoicon.png",
+        "travel":[
+        {
+          "image": "/assets/travelPackages/beach.jpg",
+          "category": "BEACH ESCAPE",
+          "title": "Bali Getaway: 5 Days 4 Nights All-Inclusive",
+          "price": "$499",
+          "rating": "4.9",
+          "travelers": "1.2K travelers"
+        },
+        {
+          "image": "/assets/travelPackages/mountain.jpg",
+          "category": "MOUNTAIN ADVENTURE",
+          "title": "Bromo Sunrise Tour: 3 Days 2 Nights Experience",
+          "price": "$299",
+          "rating": "4.8",
+          "travelers": "850 travelers"
+        },
+        {
+          "image": "/assets/travelPackages/city.jpg",
+          "category": "CITY TOUR",
+          "title": "Tokyo Delight: 6 Days 5 Nights Exploration",
+          "price": "$799",
+          "rating": "5.0",
+          "travelers": "2.3K travelers"
+        }
+      ]
+    },
+
+    "destination":{
+        "title": "Popular Destination",
+        "subTitle": "Let's enjoy this heaven on earth",
+        "rightTeks1":"Many places are very famous, clean, and will give very",
+        "rightTeks2":"deep impression to visitor and will make them comeback.",
+        "icon" : "/assets/destination/icon.png",
+        "listDestination":[
+            {"name": "Bali Beach", "desc": "The beaches in Bali have stunning natural beauty", "imgURL": "/assets/destination/bali.jpg", "location": "Indonesia"},
+            {"name": "Eiffel Tower", "desc": "The Eiffel Tower is an iron lattice tower located on the Champ de Mars in Paris", "imgURL": "/assets/destination/paris.jpg", "location": "Paris"},
+            {"name": "Mount Fuji", "desc": "Her beautiful figure covered in snow all year round has captivated people since ancient times.", "imgURL": "/assets/destination/fuji.jpg", "location": "Japan"},
+            {"name": "Singapore", "desc": "Singapore has stunning natural beauty, with many parks and gardens.", "imgURL": "/assets/destination/singapore.jpg", "location": "Singapore"}
+        ]
+    },
+    "travel":{
+        "title": "Travel to make a sweet memories",
+        "subTitle": "finds trips that fit a flexible lifestyle",
+        "button": "Start Travel",
+        "listTitle": "Why Travel?",
+        "tilte2": "Recomended Destination",
+        "icon": "/assets/whyTravel/icon.png",
+        "recDestination": [
+            {"name" : "Tropical Beach", "desc" : "Enjoy the beauty of the beach with white sand and clear blue water.", "imgUrl" : "/assets/whyTravel/tropicalbeach.jpg"},
+            {"name": "Majestic Mountains", "desc": "Explore the majestic mountains with incredible views.", "imgUrl" : "/assets/whyTravel/majesticmountain.jpg" },
+            {"name": "Modern Cityscape", "desc": "Experience the metropolitan city with various attractions.", "imgUrl" : "/assets/whyTravel/citysape.jpg" }
+        ],
+        "listcontent": [
+            {"id" : "1", "title": "Finds trips that fit your freedom"},
+            {"id" : "2", "title": "Get back to nature by travel"},
+            {"id" : "3", "title": "Reignite those travel tastebuds"},
+            {"id" : "4", "title": "Enjoy the travel"}
+                        
+            ]
+    },
+    "topDestination": {
+        "icon": "/assets/",
+        "title" :"Top Destinations to Visit",
+        "footer": "Discover the best places to visit this season!",
+        "span" : "Explore Now →",
+        "destination":[
+        {
+          "image": "/assets/destination/bali.jpg",
+          "name": "Bali, Indonesia",
+          "rating": 4.8,
+          "reviews": "12,543 reviews"
+        },
+        {
+          "image": "/assets/destination/paris.jpg",
+          "name": "Paris, France",
+          "rating": 4.9,
+          "reviews": "45,678 reviews"
+        },
+        {
+          "image": "/assets/destination/fuji.jpg",
+          "name": "Mount Fuji, Japan",
+          "rating": 4.7,
+          "reviews": "33,210 reviews"
+        },
+        {
+          "image": "/assets/destination/sydney.jpg",
+          "name": "Sydney, Australia",
+          "rating": 4.6,
+          "reviews": "25,432 reviews"
+        },
+        {
+          "image": "/assets/destination/singapore.jpg",
+          "name": "Singapore",
+          "rating": 4.5,
+          "reviews": "30,890 reviews"
+        }
+      ]
+    }
+}
