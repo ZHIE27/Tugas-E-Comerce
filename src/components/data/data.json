@@ -1,4 +1,4 @@
-{
+{   
     "home":{
         "title1": "Explore the World!",
         "title2": "Making Every ",
@@ -17,7 +17,7 @@
         "title": "We Offer Best Services",
         "iconTitle": "/assets/tourPackages/servicesicon.png",
         "icon" : "/assets/tourPackages/plane2.png",
-        "bgContent": "/public/assets/tourPackages/bg-cloud.jpg",
+        "bgContent": "/assets/tourPackages/bg-cloud.jpg",
             "items": [
             { "name": "Calculated Weather", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/satelite.png" },
             { "name": "Best Flights", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/plane.png" },
@@ -145,5 +145,16 @@
           "reviews": "30,890 reviews"
         }
       ]
+    },
+
+    "aboutPage" :{
+      "title" : ["The Story", "Of", "Grasfam"], 
+      "desc" : "We are Grasfam, a travel service provider committed to providing the best travel experience at an affordable price. With an experienced team, we are ready to accompany your journey to your dream destination.",
+      "ourStory" : "Our Story",
+      "descStory" : "Founded in 2025, Grasfam was born from a passion for exploring the world and sharing unforgettable experiences with others. What started as a small group of travel enthusiasts has now grown into a trusted travel company, helping thousands of adventurers discover breathtaking destinations. In the early days, we focused on providing personalized travel experiences to a handful of destinations. Over time, our commitment to excellent service, transparency, and customer satisfaction allowed us to expand our offerings. Today, we provide a wide range of travel packages, from budget-friendly trips to luxury vacations, ensuring that every traveler finds the perfect journey.",
+      "icon1" : "/assets/aboutPage/ourstory.png",
+      "icon2" : "/assets/aboutPage/ourvision.png",
+      "ourVision" : "Our Vision",
+      "descVision" : "At Grasfam, our vision is to become a leading travel provider that inspires and enables people to explore the world effortlessly. We aim to create seamless, personalized, and unforgettable travel experiences that connect cultures, foster adventure, and bring joy to every journey. By continuously evolving and adapting to the needs of modern travelers, we strive to make dream vacations a reality for everyone."
     }
 }
