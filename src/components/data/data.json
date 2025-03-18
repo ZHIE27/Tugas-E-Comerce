@@ -156,5 +156,14 @@
       "icon2" : "/assets/aboutPage/ourvision.png",
       "ourVision" : "Our Vision",
       "descVision" : "At Grasfam, our vision is to become a leading travel provider that inspires and enables people to explore the world effortlessly. We aim to create seamless, personalized, and unforgettable travel experiences that connect cultures, foster adventure, and bring joy to every journey. By continuously evolving and adapting to the needs of modern travelers, we strive to make dream vacations a reality for everyone."
+    },
+    "pricingPage" : {
+      "title" : "Find Your Perfect Journey – Affordable & Transparent Pricing!",
+      "subTitle" : "Choose the best travel package that suits your budget and adventure style",
+      "pricingCards" :[{
+        "name": "Budget Trip","button" : "Choose Plan", "price" :"$200", "icon": "/assets/pricingPage/budget.png", "include" : ["✔ 3 Destinations" ,"✔ Hotel & Transport Included", "✔ Travel Guide & Assistance", "✔ Standard Itinerary"]},
+        {"name": "Standard Trip", "button" : "Choose Plan", "price" : "$500", "icon": "/assets/pricingPage/standard.png", "include" : ["✔ 5 Destinations" , "✔ Premium Hotel & Transport", "✔ Exclusive Guided Tours", "✔ Customized Itinerary", "✔ Travel Insurance", ""]},
+        {"name": "Luxury Trip", "button" : "Choose Plan", "price" : "$1000", "icon": "/assets/pricingPage/luxury.png", "include" : ["✔ Unlimited Destinations", "✔ 5-Star Hotels & Private Transport", "✔ VIP Travel Concierge", "✔ Fully Custom Itinerary", "✔ Premium Travel Insurance", "✔ Group Discounts"]}
+      ]
     }
 }
