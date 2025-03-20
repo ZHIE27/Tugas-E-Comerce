@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 import logo from "/assets/logo/Grasfam.svg";
 import data from "./data/data.json";
 
@@ -46,33 +45,42 @@ export default function Navbar() {
       )}
 
       {/* Navbar */}
-      <nav className="bg-slate-100 border-b border-[#E9EAF0] px-8 py-5 gap-4 flex justify-between items-center">
-        {/* Links */}
-        <div className="text-sm text-gray-400 px-8 flex justify-between items-center">
-          <div className="hidden md:flex gap-8">
-            {data.navbar.links.map((link, index) => (
-              <Link
-                key={index}
-                to={link.toLowerCase() === "home" ? "/" : `/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                className={`text-sm px-2 ${active === link ? "text-black shadow-[inset_0px_2px_0px_0px_#FF6636]" : "text-gray-400"}`}
-                onClick={() => setActive(link)}
-              >
-                {link}
-              </Link>
-            ))}
-          </div>
+      <nav className="bg-slate-100 border-b border-[#E9EAF0] px-8 py-5 flex justify-between items-center">
+      {/* Links */}
+      <div className="text-sm text-gray-400 px-8 flex justify-between items-center relative">
+        <div className="hidden md:flex gap-8 relative">
+          {data.navbar.links.map((link, index) => {
+            const path = link.toLowerCase() === "home" ? "/" : `/${link.toLowerCase().replace(/\s+/g, "-")}`;
+            const isActive = active === path;
 
-          {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="text-black md:hidden">
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+            return (
+              <div key={index} className="relative">
+                <Link
+                  to={path}
+                  className={`relative text-sm px-2 py-1 transition-colors duration-300 ${
+                    isActive ? "text-black" : "text-gray-400 hover:text-black"
+                  }`}
+                  onClick={() => setActive(path)}
+                >
+                  {link}
+                  {/* Garis bawah animasi */}
+                  <span
+                    className={`absolute left-0 bottom-0 h-[2px] bg-[#FF6636] transition-all duration-300 ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </Link>
+              </div>
+            );
+          })}
         </div>
+      </div>
 
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <img src={logo} alt="LOGO" className="h-8 transform scale-[4] w-auto me-5" />
-        </div>
-      </nav>
+      {/* Logo */}
+      <div className="flex-shrink-0">
+        <img src={logo} alt="LOGO" className="h-8 transform scale-[4] w-auto me-5" />
+      </div>
+    </nav>
     </>
   );
 }

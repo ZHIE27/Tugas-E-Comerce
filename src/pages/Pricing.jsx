@@ -3,7 +3,7 @@ import data from "../components/data/data.json";
 const Pricing = () => {
   return (
     <div>
-      <div className="w-full h-full p-10 bg-[#578FCA]">
+      <div className="w-full h-full p-10 bg-[#007074]">
         {/* HEADER */}
         <div className="wrap text-center">
           <h1 className="text-[1.7rem] text-white font-bold">
@@ -54,7 +54,7 @@ const Pricing = () => {
       </div>
 
       {/* BASIC PRICING SECTION */}
-      <div className="w-full h-screen bg-cyan-300"></div>
+      {/* <div className="w-full h-screen bg-cyan-300"></div> */}
     </div>
   );
 };

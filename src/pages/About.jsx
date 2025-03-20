@@ -22,7 +22,7 @@ const About = () => {
       </div>
 
       {/* OUR STORY */}
-      <div className="w-full flex flex-col-reverse md:flex-row p-7 justify-between items-center bg-slate-100 min-h-screen">
+      <div className="w-full flex flex-col-reverse md:flex-row p-7 justify-around items-center bg-slate-100 min-h-screen">
         <div className="text-center shadow-lg w-full md:w-xl p-6 rounded-md">
           <h1 className="font-bold text-4xl md:text-6xl mb-4">{data.aboutPage.ourStory}</h1>
           <p>{data.aboutPage.descStory}</p>
@@ -33,7 +33,7 @@ const About = () => {
       </div>
 
       {/* OUR VISION */}
-      <div className="w-full flex flex-col md:flex-row p-7 justify-between items-center bg-slate-100 min-h-screen">
+      <div className="w-full flex flex-col md:flex-row p-7 justify-around lg:justify-center items-center bg-white min-h-screen">
         <div className="w-full md:w-xl flex items-center justify-center h-80 md:h-screen">
           <img className="w-60 md:w-80 h-60 md:h-80" src={data.aboutPage.icon2} alt="vision" />
         </div>

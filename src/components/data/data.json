@@ -6,12 +6,11 @@
         "title4": "Memorable",
         "subTitle": "Let's join with Grasfam!",
         "button": "start",
-        "bgURL": "/assets/hero2.jpg",
-        "img1" : "/assets/homeAsset/womanhome.png",
+        "bgURL": "/assets/homeAsset/bghome.jpg",
         "icon": "/assets/homeAsset/paperplane.png"
     },
     "navbar": {
-        "links" : ["Home", "Contact", "Services", "About", "Pricing"]
+        "links" : ["Home", "Contact", "About", "Pricing"]
     },
     "bestServices": {
         "title": "We Offer Best Services",
@@ -165,5 +164,14 @@
         {"name": "Standard Trip", "button" : "Choose Plan", "price" : "$500", "icon": "/assets/pricingPage/standard.png", "include" : ["✔ 5 Destinations" , "✔ Premium Hotel & Transport", "✔ Exclusive Guided Tours", "✔ Customized Itinerary", "✔ Travel Insurance", ""]},
         {"name": "Luxury Trip", "button" : "Choose Plan", "price" : "$1000", "icon": "/assets/pricingPage/luxury.png", "include" : ["✔ Unlimited Destinations", "✔ 5-Star Hotels & Private Transport", "✔ VIP Travel Concierge", "✔ Fully Custom Itinerary", "✔ Premium Travel Insurance", "✔ Group Discounts"]}
       ]
+    },
+    "contactPage":{
+      "title" : ["Contact Us", "Feel free to contact us any time. We will get back to you as son as we can"],
+      "infoTilte" : "info",
+      "info":[{"name" : "admin@grasfam.com", "icon" :"/assets/contactPage/email.svg"},
+                            {"name" :"0895 - 1923 - 5409", "icon": "/assets/contactPage/phone.svg"},
+                            {"name" : "JL. Nusantara V No.7 Kav. IPTN Cibabat, Cimahi Utara, Cimahi, Indonesia" , "icon" :"/assets/contactPage/building.svg"},
+                            {"name" : "09:00 - 20:00", "icon" :"/assets/contactPage/clock.svg"}],
+      "button" : "SEND"
     }
 }
