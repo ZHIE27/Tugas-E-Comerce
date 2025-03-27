@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-slate-100 border-b border-[#E9EAF0] px-8 py-5 flex justify-between items-center fixed right-0 left-0 mb-7 z-50">
+      <nav className="bg-slate-100 border-b flex-row-reverse shadow-md border-[#E9EAF0] px-8 py-5 flex justify-between items-center fixed right-0 left-0 mb-7 z-50">
         {/* Logo */}
         <div className="ms-5 flex-shrink-0">
           <img src={logo} alt="LOGO" className="h-8 scale-300 w-auto me-5" />
@@ -45,7 +45,9 @@ export default function Navbar() {
                 className={`relative text-sm px-2 py-1 transition-colors duration-300 ${
                   isActive ? "text-black font-semibold" : "text-gray-400 hover:text-black"
                 }`}
-                onClick={() => setActive(link)}
+                onClick={() =>{ setActive(link);
+                  window.scrollTo(0,0);
+                }}
               >
                 {link}
                 <span
@@ -98,6 +100,7 @@ export default function Navbar() {
                   onClick={() => {
                     setActive(link);
                     setIsOpen(false);
+                    window.scrollTo(0,0);
                   }}
                 >
                   {link}

@@ -10,7 +10,7 @@ const DiscountFirstTravel = () => {
       </h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
         {data.discountVoucher.voucher.map((data, index) => (
-          <div key={index} className="flex bg-white cursor-pointer shadow-lg overflow-hidden rounded-lg">
+          <div key={index} className="flex bg-white cursor-pointer shadow-md overflow-hidden rounded-lg">
             <div className="w-1/3 md:w-1/4 bg-gray-200 flex items-center justify-center">
               {data.imgUrl ? (
                 <img src={data.imgUrl} alt={data.voucherTitle} className="w-full h-full object-cover" />

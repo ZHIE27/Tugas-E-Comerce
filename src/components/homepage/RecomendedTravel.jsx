@@ -8,7 +8,7 @@ const ReccTravel = () => {
       <div className="max-w-7xl mx-auto">
         {/* Banner */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-12">
-          <div className="bg-gradient-to-br from-[#009688] to-[#26A69A] pt-8 px-6 flex items-center">
+          <div className="bg-gradient-to-br from-[#009688] p-4 to-[#26A69A] px-6 flex items-center">
             <div className="w-2/3 text-white">
               <h2 className="text-2xl font-bold mb-2">{data.travel.title}</h2>
               <p className="text-sm">{data.travel.subTitle}</p>

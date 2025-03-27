@@ -3,7 +3,6 @@ import { Star } from "lucide-react";
 import data from "../data/data.json"
 
 
-// Data destinasi wisata
 
 
 const TopDestination = () => {
@@ -20,10 +19,10 @@ const TopDestination = () => {
               <img
                 src={data.image}
                 alt={data.name}
-                className="w-full h-56 object-cover"
+                className="w-full h-40 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-lg font-semibold">{data.name}</h3>
+                <h3 className="text text-start font-semibold">{data.name}</h3>
                 <div className="flex justify-center items-center text-gray-600 mt-2">
                   <Star className="w-5 h-5 text-yellow-500" />
                   <span className="ml-1 font-semibold">{data.rating}</span>

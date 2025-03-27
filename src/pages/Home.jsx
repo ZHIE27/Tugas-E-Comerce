@@ -9,9 +9,9 @@ import data from "../components/data/data.json"
 const  Home = ()=> {
   return (
     <div>
-<header className=" md:py-10 h-screen flex md:flex-row flex-col-reverse lg:flex-row items-center justify-around lg:justify-between w-full px-6 lg:px-28 bg-cover" style={{ backgroundImage: `url(${data.home.bgURL})` }}>
+<header className=" md:py-10 h-screen flex md:flex-row flex-col-reverse lg:flex-row items-center justify-center lg:justify-center w-full px-6 lg:px-28 bg-left bg-cover" style={{ backgroundImage: `url(${data.home.bgURL})` }}>
   {/* Left side */}
-  <div className="max-w-md  z-30 text-center lg:text-left">
+  <div className="max-w-md flex-col  z-30 text-center lg:text-center">
     <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
       {data.home.title1} <br />
       {data.home.title2}
@@ -19,20 +19,23 @@ const  Home = ()=> {
       {data.home.title4}
     </h1>
 
-    <p className="text-white mt-3 text-sm sm:text-base md:text-lg leading-relaxed">
+    <p className="text-white mt-3 my-4 text-sm sm:text-base md:text-lg leading-relaxed">
       {data.home.subTitle}
     </p>
 
-    <button className="bg-gradient-to-r transition duration-200 from-blue-500 to-cyan-300 w-[100px] sm:w-[120px] hover:bg-gradient-to-r hover:from-blue-700 hover:to-cyan-500 text-slate-50 hover:text-slate-200 rounded-xl px-3 py-2 mt-4 text-sm sm:text-base md:text-lg">
+    <button onClick={()=>{
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+      });
+    }} className="bg-gradient-to-r font-bold transition duration-200 from-blue-500 to-cyan-300 w-[100px] sm:w-[120px] hover:bg-gradient-to-r hover:from-blue-700 hover:to-cyan-500 text-slate-50 hover:text-slate-200 rounded-xl px-3 py-2 mt-4 text-sm sm:text-base md:text-lg">
       {data.home.button}
     </button>
   </div>
-
-  {/* Wave SVG */}
 </header>
 
 
-      <div className="lg:px-36 px-7 bg-[#F5F5F5] pt-8 pb-70 relative">
+      <div className="lg:px-36 px-7 bg-[#F5F5F5] py-4 lg:flex lg:items-center lg:h-screen relative">
         <Destination />
       </div>
       <div className="mb-20">
@@ -51,7 +54,7 @@ const  Home = ()=> {
       </div>
 
 
-      <div className="lg:px-30 px-7 -mt-70 bg-[#F5F5F5] relative">
+      <div className="lg:px-30 px-7 my-4 -mt-70 bg-[#F5F5F5] relative">
         <TopDestination/>
       </div>
 

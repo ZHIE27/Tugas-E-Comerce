@@ -1,10 +1,21 @@
 import data from "../components/data/data.json";
-
+import { motion } from "framer-motion"
 const Pricing = () => {
   return (
     <div>
+      {/* TOP CONTENT */}
+      <div className="flex items-center bg-cover h-screen justify-center"  style={{ backgroundImage: `url(${data.pricingPage.bgImage})` }}>
+        <div className="w-full bg-slate-900/50 h-full flex justify-center items-center">
+          <div className="w-[70%] p-10 flex items-center text-center flex-col justify-center">
+            <motion.h1 className=" font-bold mb-4 text-white text-[2rem] underline decoration-double"
+
+              >{data.pricingPage.topTitle[0]}</motion.h1>
+            <p className="text-white">{data.pricingPage.topTitle[1]}</p>
+          </div>
+        </div>
+      </div>
+      {/* END */}
       <div className="w-full h-full p-10 bg-[#007074]">
-        {/* HEADER */}
         <div className="wrap text-center">
           <h1 className="text-[1.7rem] text-white font-bold">
             {data.pricingPage.title}

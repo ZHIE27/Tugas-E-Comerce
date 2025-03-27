@@ -3,8 +3,8 @@ import Icon from "/assets/destination/location.svg";
 
 const Destination = () => {
   return (
-    <div className="container bg-[#F2EFE7] shadow-lg w-full lg:p-4 min-h-[50vh] h-auto">
-      {/* TITLE */}
+    // POPULAR DESTINATION
+    <div className="container bg-[#F2EFE7] shadow-md w-full lg:p-4 min-h-[50vh] h-auto">
       <div className="flex flex-col md:flex-row items-center justify-between px-4">
         <div className="flex items-center md:items-baseline text-center md:text-left">
           <div>

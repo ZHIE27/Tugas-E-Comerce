@@ -5,7 +5,7 @@ const Contact = () => {
     <div className="flex flex-col lg:flex-row w-full min-h-max">
       {/* FORM SECTION */}
       <div className="w-full max-w-[1200px] bg-[#FFF5E4] md:pt-30 pt-20 flex items-center justify-center p-6">
-        <div className="bg-white w-full max-w-lg md:w-3/4 lg:w-[560px] h-auto lg:min-h-[400px] md:h-3/4 p-7 shadow-lg rounded-lg">
+        <div className="bg-white w-full max-w-lg md:w-3/4 lg:w-[560px] h-auto lg:min-h-[400px] md:h-3/4 p-7 shadow-md rounded-lg">
           <div className="contact w-full">
             <h1 className="text-[2rem] md:text-[2.5rem] text-gray-900 font-bold">
               {data.contactPage.title[0]}
@@ -40,7 +40,7 @@ const Contact = () => {
 
       {/* INFO SECTION */}
       <div className="relative w-full lg:w-[45%] min-h-[350px] bg-[#FFA725] flex items-center justify-center p-6">
-        <div className="w-full max-w-lg bg-gray-900 p-7 rounded-lg shadow-lg 
+        <div className="w-full max-w-lg bg-gray-900 p-7 rounded-lg shadow-md 
             lg:absolute lg:-left-[20%] lg:top-[15%]">
           <h1 className="text-[1.8rem] md:text-[2rem] mb-4 font-semibold text-slate-100">
             {data.contactPage.infoTilte}

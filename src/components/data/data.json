@@ -44,7 +44,9 @@
             }
         ]
     },
+
     "travelPackages": {
+        "title" : "Current Promo Travel Packages",
         "icon": "/assets/travelPackages/promoicon.png",
         "travel":[
         {
@@ -71,7 +73,24 @@
           "rating": "5.0",
           "travelers": "2.3K travelers"
         }
-      ]
+      ],
+      "mainPromo": {
+      "category": "CITY TOUR",
+      "title": "Tokyo Delight: 6 Days 5 Nights Exploration",
+      "description": "Experience the wonders of Tokyo",
+      "rating": "5.0",
+      "travelers": "2.3K travelers",
+      "duration": "6 Days",
+      "price": "$799",
+      "originalPrice": "$999",
+      "discount": "20% OFF",
+      "highlights": [
+        "5-star accommodation included",
+        "Guided city tours with local experts",
+        "Exclusive access to cultural events"
+      ],
+      "image": "/assets/travelPackages/tokyo.jpg"
+    }
     },
 
     "destination":{
@@ -157,6 +176,8 @@
       "descVision" : "At Grasfam, our vision is to become a leading travel provider that inspires and enables people to explore the world effortlessly. We aim to create seamless, personalized, and unforgettable travel experiences that connect cultures, foster adventure, and bring joy to every journey. By continuously evolving and adapting to the needs of modern travelers, we strive to make dream vacations a reality for everyone."
     },
     "pricingPage" : {
+      "topTitle" : ["Choose Your Favorite Tour Package" , "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores explicabo quibusdam itaque sunt, aliquam totam delectus sed laudantium similique vitae."],
+      "bgImage" :"/assets/pricingPage/pricing-bg.jpg",
       "title" : "Find Your Perfect Journey – Affordable & Transparent Pricing!",
       "subTitle" : "Choose the best travel package that suits your budget and adventure style",
       "pricingCards" :[{
