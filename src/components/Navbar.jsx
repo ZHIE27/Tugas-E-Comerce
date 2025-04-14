@@ -1,14 +1,25 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "/assets/logo/Grasfam.svg";
 import data from "./data/data.json";
 
 export default function Navbar() {
-  const [active, setActive] = useState("Home");
+  const location = useLocation();
+  const [active, setActive] = useState(localStorage.getItem("activeLink") || "Home");
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
+  // Sync active state with the current route on page load
+  useEffect(() => {
+    const currentPath = location.pathname === "/" ? "Home" : 
+      data.navbar.links.find(link => `/${link.toLowerCase().replace(/\s+/g, "-")}` === location.pathname) || "Home";
+
+    setActive(currentPath);
+    localStorage.setItem("activeLink", currentPath);
+  }, [location.pathname]);
+
+  // Close menu when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -45,13 +56,15 @@ export default function Navbar() {
                 className={`relative text-sm px-2 py-1 transition-colors duration-300 ${
                   isActive ? "text-black font-semibold" : "text-gray-400 hover:text-black"
                 }`}
-                onClick={() =>{ setActive(link);
-                  window.scrollTo(0,0);
+                onClick={() => {
+                  setActive(link);
+                  localStorage.setItem("activeLink", link);
+                  window.scrollTo(0, 0);
                 }}
               >
                 {link}
                 <span
-                  className={`absolute left-0 bottom-0 h-[2px] bg-[#FF6636] transition-all duration-300 ${
+                  className={`absolute left-0 bottom-0 h-[2px] bg-[#FF6636] transition-all duration-150 ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 ></span>
@@ -60,7 +73,7 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Tombol Hamburger */}
+        {/* Hamburger Menu */}
         <button
           className="md:hidden flex flex-col space-y-1.5 p-2 rounded focus:outline-none z-50"
           onClick={() => setIsOpen(!isOpen)}
@@ -79,7 +92,7 @@ export default function Navbar() {
           ></motion.span>
         </button>
 
-        {/* Mobile Menu dengan Animasi */}
+        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -99,8 +112,9 @@ export default function Navbar() {
                   }`}
                   onClick={() => {
                     setActive(link);
+                    localStorage.setItem("activeLink", link);
                     setIsOpen(false);
-                    window.scrollTo(0,0);
+                    window.scrollTo(0, 0);
                   }}
                 >
                   {link}

@@ -194,5 +194,68 @@
                             {"name" : "JL. Nusantara V No.7 Kav. IPTN Cibabat, Cimahi Utara, Cimahi, Indonesia" , "icon" :"/assets/contactPage/building.svg"},
                             {"name" : "09:00 - 20:00", "icon" :"/assets/contactPage/clock.svg"}],
       "button" : "SEND"
+    },
+    "footer":{
+      "topCallToAction": {
+    "heading": "Start travel with Grasfam.",
+    "buttons": [
+      {
+        "text": "Join",
+        "action": "/pricing#form",
+        "style": "bg-red-500"
+      },
+      {
+        "text": "Browse All Travel",
+        "action": "#",
+        "style": "bg-gray-700"
+      }
+    ]
+  },
+  "mainFooterSection": {
+    "logo": {
+      "src": "/assets/logo/Grasfam.svg",
+      "alt": "Grasfam",
+      "description": "Aliquam rhoncus ligula est, non pulvinar elit convallis nec."
+    },
+    "categories": {
+      "heading": "Top 4 Category",
+      "items": ["Nature", "Beach", "Mountain", "City"]
+    },
+    "quickLinks": {
+      "heading": "Quick Links",
+      "links": [
+        "About",
+        "Grasfam →",
+        "Contact"
+      ]
+    },
+    "support": {
+      "heading": "Support",
+      "links": [
+        "Help Center",
+        "FAQs",
+        "Terms & Conditions",
+        "Privacy Policy"
+      ],
+      "appDownload": {
+        "heading": "Download Our App",
+        "buttons": [
+          {
+            "text": "App Store",
+            "action": "#",
+            "style": "bg-gray-700"
+          },
+          {
+            "text": "Play Store",
+            "action": "#",
+            "style": "bg-gray-700"
+          }
+        ]
+      }
+    }
+  },
+  "bottomFooter": {
+    "text": "© 2025 - Grasfam. Designed by Grasfam. All rights reserved."
+  }
     }
 }

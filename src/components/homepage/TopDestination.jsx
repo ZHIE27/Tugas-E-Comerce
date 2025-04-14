@@ -32,8 +32,7 @@ const TopDestination = () => {
             </div>
           ))}
         </div>
-
-{/* footer */}
+        {/* footer */}
         <p className="text-gray-500 text-sm mt-8">
           {data.topDestination.title}{" "}
           <span className="text-red-500 font-medium cursor-pointer">{data.topDestination.footer}</span>

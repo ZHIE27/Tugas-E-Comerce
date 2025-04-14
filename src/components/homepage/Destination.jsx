@@ -25,7 +25,7 @@ const Destination = () => {
             key={index}
             className="relative w-full sm:w-[180px] md:w-[200px] cursor-pointer border-white border-2 h-[220px] sm:h-[230px] md:h-[250px] group m-2 sm:m-3 md:m-4 overflow-hidden rounded-lg"
           >
-            {/* efek pas hover zoom */}
+            {/* efek zoom */}
             <div
               className="w-full h-full bg-cover bg-center duration-300 group-hover:scale-110"
               style={{ backgroundImage: `url(${data.imgURL})` }}
@@ -33,7 +33,7 @@ const Destination = () => {
               <span className="bg-slate-500 opacity-0 transition duration-300 group-hover:opacity-50 w-full h-full absolute"></span>
             </div>
 
-            {/* Overlay teks yang muncul saat hover */}
+            {/* Overlay hover */}
             <div className="absolute inset-0 flex flex-col items-center justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 rounded">
               <span className="bg-slate-50 rounded-md p-1 text-[.6rem] sm:text-[.7rem] font-bold absolute top-[5px] right-[3px]">
                 20% OFF
