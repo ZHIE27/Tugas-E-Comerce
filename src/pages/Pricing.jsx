@@ -1,10 +1,12 @@
 import data from "../components/data/data.json";
-import { motion } from "framer-motion";
 import Form from "../components/Form";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 const Pricing = () => {
+
+  const [showAlert, setShowAlert] = useState(false);
+
 
   useEffect(() => {
     if (location.hash === "#form") {
@@ -25,11 +27,11 @@ const Pricing = () => {
         >
         <div className="w-full bg-slate-900/50 h-full flex justify-center items-center">
           <div className="max-w-[90%] lg:max-w-[70%] p-6 md:p-10 flex items-center text-center flex-col justify-center">
-            <motion.h1
-              className="font-bold mb-4 text-white text-[1.8rem] md:text-[2rem] underline decoration-double"
+            <p
+               className="font-bold mb-4 text-white text-[1.8rem] md:text-[2rem] underline decoration-double"
               >
               {data.pricingPage.topTitle[0]}
-            </motion.h1>
+            </p>
             <p className="text-white text-[1rem] md:text-[1.1rem]">
               {data.pricingPage.topTitle[1]}
             </p>
@@ -54,7 +56,7 @@ const Pricing = () => {
             {data.pricingPage.pricingCards.map((card, index) => (
               <div
                 key={index}
-                className="w-full sm:w-[300px] rounded-md relative p-6 h-auto min-h-[500px] mx-auto bg-[#D1F8EF] shadow-lg flex flex-col justify-between"
+                className="w-full mb-10 sm:w-[300px] rounded-md relative p-6 h-auto min-h-[500px] mx-auto bg-[#D1F8EF] shadow-lg flex flex-col justify-between"
               >
                 {/* Card Header */}
                 <div>
@@ -101,9 +103,15 @@ const Pricing = () => {
       </div>
 
       {/* FORM SECTION */}
-      <div id="form" className="w-full flex justify-center items-center px-4">
+      {/* ALERT */}
+      {showAlert && (
+                <div className="fixed top-19 right-5 bg-blue-500 text-white px-4 py-2 rounded shadow-lg transition-transform transform scale-100 animate-fade-in z-50">
+                🎉 Form submitted successfully!
+              </div>
+      )}
+      <div id="form" className="w-full flex justify-center h-screen items-center px-4">
       <img src={data.home.bgURL} alt="bgimage" className="w-full h-full absolute" />
-          <Form />
+          <Form setShowAlert={setShowAlert}/>
       </div>
     </div>
   );

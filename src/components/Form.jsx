@@ -3,7 +3,7 @@ import { MdOutlineAlternateEmail, MdDriveFileRenameOutline } from "react-icons/m
 import { IoIosContact } from "react-icons/io";
 
 
-export default function FormValidation() {
+export default function FormValidation({setShowAlert}) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,7 +18,7 @@ export default function FormValidation() {
   ];
 
   const [errors, setErrors] = useState({});
-  const [showAlert, setShowAlert] = useState(false);
+
   const [focusedInput, setFocusedInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -58,7 +58,7 @@ const handleSubmit = (e)=>{
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body:(`Name=${e.target.name.value}&Email=${e.target.email.value}&Pesan=${e.target.message.value}&Trip=${e.target.trip.value}`)})
       .then(res=>res.text())
-      .then(data=>{ 
+      .then(()=>{ 
         setShowAlert(true)
         setTimeout(function(){
           setShowAlert(false)
@@ -92,21 +92,8 @@ const handleSubmit = (e)=>{
   return (
     <div className="p-4 sm:p-6 w-full max-w-md mx-auto my-10 bg-white/40 backdrop-blur-md rounded-md shadow-md">
       <h2 className="text-lg font-bold text-white mt-4 mb-4 text-center">BOOK NOW!</h2>
-      {/* SUCCES ALERT */}
-      {showAlert && (
-        <div className="fixed top-0 right-5 bg-blue-500 text-white px-4 py-2 rounded shadow-lg transition-transform transform scale-100 animate-fade-in z-50">
-          🎉 Form submitted successfully!
-        </div>
-      )}
-      {/* LOADING ALERT */}
-      {isLoading && (
-          <div className="mt-2 fixed flex top-0 items-center gap-2 text-sm text-white">
-          <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
-          in the process of sending data
-        </div>
-      )}
-
-      <form id="form" className="w-full" onSubmit={handleSubmit}>
+  
+      <form id="form" className="w-full pb-2" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-4">
           {/* Name Field */}
           <div>
@@ -202,6 +189,13 @@ const handleSubmit = (e)=>{
           >
             Submit
           </button>
+      {/* LOADING ALERT */}
+      {isLoading && (
+          <div className="mt-2 flex items-center gap-2 text-sm text-white">
+          <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+          in the process of sending data
+        </div>
+      )}
         </div>
       </form>
     </div>
