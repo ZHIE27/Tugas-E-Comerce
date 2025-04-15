@@ -67,7 +67,7 @@ const Home = () => {
       <header
         className="md:py-10 h-screen flex md:flex-row flex-col-reverse lg:flex-row items-center justify-center lg:justify-center w-full px-6 lg:px-28 bg-left bg-cover"
       >
-        <img src={data.home.bgURL} alt="bgimage" className="w-full h-full absolute" />
+        <img src={data.home.bgURL} alt="bgimage" className="object-cover w-full h-full absolute" />
         <div className="max-w-md flex-col z-30 text-center lg:text-center">
           <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
             {data.home.title1} <br />

@@ -110,7 +110,7 @@ const Pricing = () => {
               </div>
       )}
       <div id="form" className="w-full flex justify-center h-screen items-center px-4">
-      <img src={data.home.bgURL} alt="bgimage" className="w-full h-full absolute" />
+      <img src={data.home.bgURL} alt="bgimage" className="w-full h-full object-cover absolute" />
           <Form setShowAlert={setShowAlert}/>
       </div>
     </div>
