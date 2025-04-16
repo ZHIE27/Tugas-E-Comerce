@@ -9,13 +9,14 @@ const Pricing = () => {
 
 
   useEffect(() => {
-    if (location.hash === "#form") {
-      const element = document.getElementById("form");
+    if (location.hash) {
+      const hash = location.hash.substring(1);
+      const element = document.getElementById(hash)
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  });
+  },[]);
 
 
   return (
@@ -28,7 +29,7 @@ const Pricing = () => {
         <div className="w-full bg-slate-900/50 h-full flex justify-center items-center">
           <div className="max-w-[90%] lg:max-w-[70%] p-6 md:p-10 flex items-center text-center flex-col justify-center">
             <p
-               className="font-bold mb-4 text-white text-[1.8rem] md:text-[2rem] underline decoration-double"
+              className="font-bold mb-4 text-white text-[1.8rem] md:text-[2rem] underline decoration-double"
               >
               {data.pricingPage.topTitle[0]}
             </p>
@@ -40,7 +41,7 @@ const Pricing = () => {
       </div>
 
       {/* PRICING SECTION */}
-      <div className="w-full min-h-screen flex justify-center items-center flex-col p-6 md:p-10 bg-[#007074]">
+      <div id="price" className="w-full min-h-screen flex justify-center items-center flex-col p-6 py-20 md:p-20 bg-[#007074]">
         <div className="wrap flex justify-center items-center flex-col text-center">
           <h1 className="text-[1.5rem] md:text-[1.7rem] text-white font-bold">
             {data.pricingPage.title}
@@ -109,7 +110,7 @@ const Pricing = () => {
                 🎉 Form submitted successfully!
               </div>
       )}
-      <div id="form" className="w-full flex justify-center h-screen items-center px-4">
+      <div id="form" className="w-full flex justify-center min-h-screen items-center  px-4">
       <img src={data.home.bgURL} alt="bgimage" className="w-full h-full object-cover absolute" />
           <Form setShowAlert={setShowAlert}/>
       </div>

@@ -45,18 +45,21 @@ export default function FormValidation({setShowAlert}) {
   };
 
 
-  // https://script.google.com/macros/s/AKfycbxBGijtdggh2VTKliyfTPDeCPZ3URKBjRpohAGq3Z7WWuv96upheynhh-dtou7aaCInRg/exec
 const handleSubmit = (e)=>{
     e.preventDefault()
-    setIsLoading(true);
     if(!validate()){
-      return
+      return;
     }
-    const url = "https://script.google.com/macros/s/AKfycbx5D7tsWA1GWPOUIwtLS1MiwEHzBD0xrQUjOO7tc3RgcDutNrn-JsPrAH1pUTzIWdgPKw/exec"
+    setIsLoading(true);
+    const url = "https://script.google.com/macros/s/AKfycby5DFE--d1StG5Tk9AIrAQaIPyZdEgFjO587TU2PDs57FbBQ1hMuXFGSU8pGiEvmker7w/exec"
     fetch(url,{
       method:"POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body:(`Name=${e.target.name.value}&Email=${e.target.email.value}&Pesan=${e.target.message.value}&Trip=${e.target.trip.value}`)})
+      body:(`formType=formA&` +
+    `Name=${e.target.name.value}&` +
+    `Email=${e.target.email.value}&` +
+    `Pesan=${e.target.message.value}&` +
+    `Trip=${e.target.trip.value}`)})
       .then(res=>res.text())
       .then(()=>{ 
         setShowAlert(true)
@@ -88,6 +91,7 @@ const handleSubmit = (e)=>{
       [name]: value
     }));
   };
+
 
   return (
     <div className="p-4 sm:p-6 w-full max-w-md mx-auto my-10 bg-white/40 backdrop-blur-md rounded-md shadow-md">

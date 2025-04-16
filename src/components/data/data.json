@@ -196,7 +196,7 @@
       "button" : "SEND"
     },
     "footer":{
-      "topCallToAction": {
+    "topCallToAction": {
     "heading": "Start travel with Grasfam.",
     "buttons": [
       {
@@ -206,7 +206,7 @@
       },
       {
         "text": "Browse All Travel",
-        "action": "#",
+        "action": "/pricing#listprice",
         "style": "bg-gray-700"
       }
     ]

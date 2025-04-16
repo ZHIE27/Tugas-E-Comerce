@@ -1,12 +1,17 @@
-import { useNavigate } from "react-router-dom";
-import footerData from "./data/data.json"; // Impor data dari file JSON
+import { useLocation, useNavigate } from "react-router-dom";
+import footerData from "./data/data.json"; 
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [showButtonFooter, setShowButtonFooter] = useState(true);
+  const location  = useLocation();
+  useEffect (()=>{
+    setShowButtonFooter(location.pathname !== "/pricing")
+  },[location])
   const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(footerData.footer.topCallToAction.buttons[0].action);
-  };
+  const handleNavigate =(path)=>{
+    navigate(path)
+  }
 
   return (
     <footer className="bg-[#1D2026] min-h-max text-white">
@@ -16,15 +21,23 @@ const Footer = () => {
           {footerData.footer.topCallToAction.heading}
         </h2>
         <div className="mt-4 flex justify-center gap-4">
-          {footerData.footer.topCallToAction.buttons.map((button, index) => (
-            <button
-              key={index}
-              onClick={button.action === "/pricing#form" ? handleClick : undefined}
-              className={`${button.style} px-5 py-2 rounded-lg font-semibold`}
-            >
-              {button.text}
-            </button>
-          ))}
+
+            {showButtonFooter && 
+              <button
+                onClick={()=>handleNavigate("/pricing#form")}
+                className={`  bg-red-500 px-5 py-2 rounded-lg font-semibold`}
+              >
+                Join
+              </button>
+            }
+            {showButtonFooter &&
+              <button
+                onClick={()=> handleNavigate("/pricing#price")}
+                className={` bg-gray-700 px-5 py-2 rounded-lg font-semibold`}
+              >
+                Browse All Travel
+              </button>
+            }
         </div>
       </div>
 
