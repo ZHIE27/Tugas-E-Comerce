@@ -2,46 +2,36 @@ import data from "../components/data/data.json";
 import Form from "../components/Form";
 import { useEffect, useState } from "react";
 
-
 const Pricing = () => {
-
   const [showAlert, setShowAlert] = useState(false);
-
-
+  const [selectedTrip, setSelectedTrip] = useState(""); // untuk auto select di form
   useEffect(() => {
     if (location.hash) {
       const hash = location.hash.substring(1);
-      const element = document.getElementById(hash)
+      const element = document.getElementById(hash);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  },[]);
+  }, []);
 
+  const handleCardClick = (tripName) => {
+    const tripValue = tripName
+    setSelectedTrip(tripValue);
+    const formElement = document.getElementById("form");
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: "smooth" });
+    }
+    console.log(selectedTrip)
+  };
 
   return (
     <div>
-      {/* TOP CONTENT */}
-      <div
-        className="flex items-center bg-cover h-screen justify-center"
-        style={{ backgroundImage: `url(${data.pricingPage.bgImage})` }}
-        >
-        <div className="w-full bg-slate-900/50 h-full flex justify-center items-center">
-          <div className="max-w-[90%] lg:max-w-[70%] p-6 md:p-10 flex items-center text-center flex-col justify-center">
-            <p
-              className="font-bold mb-4 text-white text-[1.8rem] md:text-[2rem] underline decoration-double"
-              >
-              {data.pricingPage.topTitle[0]}
-            </p>
-            <p className="text-white text-[1rem] md:text-[1.1rem]">
-              {data.pricingPage.topTitle[1]}
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* PRICING SECTION */}
-      <div id="price" className="w-full min-h-screen flex justify-center items-center flex-col p-6 py-20 md:p-20 bg-[#007074]">
+      <div
+        id="price"
+        className="w-full min-h-screen flex justify-center items-center flex-col p-6 py-20 md:p-20 bg-[#007074]"
+      >
         <div className="wrap flex justify-center items-center flex-col text-center">
           <h1 className="text-[1.5rem] md:text-[1.7rem] text-white font-bold">
             {data.pricingPage.title}
@@ -57,7 +47,12 @@ const Pricing = () => {
             {data.pricingPage.pricingCards.map((card, index) => (
               <div
                 key={index}
-                className="w-full mb-10 sm:w-[300px] rounded-md relative p-6 h-auto min-h-[500px] mx-auto bg-[#D1F8EF] shadow-lg flex flex-col justify-between"
+                onClick={() => {
+                  handleCardClick(card.name)
+                  setSelectedTrip(card.tripType)
+                  }
+                }
+                className="w-full mb-10 sm:w-[300px] rounded-md relative p-6 h-auto min-h-[500px] mx-auto bg-[#D1F8EF] shadow-lg flex flex-col justify-between cursor-pointer hover:shadow-xl transition-all"
               >
                 {/* Card Header */}
                 <div>
@@ -104,15 +99,21 @@ const Pricing = () => {
       </div>
 
       {/* FORM SECTION */}
-      {/* ALERT */}
       {showAlert && (
-                <div className="fixed top-19 right-5 bg-blue-500 text-white px-4 py-2 rounded shadow-lg transition-transform transform scale-100 animate-fade-in z-50">
-                🎉 Form submitted successfully!
-              </div>
+        <div className="fixed top-19 right-5 bg-blue-500 text-white px-4 py-2 rounded shadow-lg transition-transform transform scale-100 animate-fade-in z-50">
+          🎉 Form submitted successfully!
+        </div>
       )}
-      <div id="form" className="w-full flex justify-center min-h-screen items-center  px-4">
-      <img src={data.home.bgURL} alt="bgimage" className="w-full h-full object-cover absolute" />
-          <Form setShowAlert={setShowAlert}/>
+      <div
+        id="form"
+        className="w-full flex justify-center min-h-screen items-center px-4 relative"
+      >
+        <img
+          src={data.home.bgURL}
+          alt="bgimage"
+          className="w-full h-full object-cover absolute"
+        />
+        <Form setShowAlert={setShowAlert} selectedTrip={selectedTrip} />
       </div>
     </div>
   );

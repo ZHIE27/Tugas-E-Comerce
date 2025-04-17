@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import footerData from "./data/data.json"; 
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   const [showButtonFooter, setShowButtonFooter] = useState(true);
   const location  = useLocation();
@@ -42,7 +42,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Section */}
-      <div className="border-b border-gray-700 py-10 px-4 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="border-b border-gray-700 py-10 px-4 md:px-10 flex flex-col md:flex-row justify-between gap-6">
         {/* Logo and Socials */}
         <div>
           <img
@@ -50,28 +50,25 @@ const Footer = () => {
             alt={footerData.footer.mainFooterSection.logo.alt}
             className="h-10 ms-7 transform scale-300"
           />
-          <p className="text-gray-400 mt-2">{footerData.footer.mainFooterSection.logo.description}</p>
         </div>
 
         {/* Top Categories */}
-        <div>
-          <h3 className="font-semibold">{footerData.footer.mainFooterSection.categories.heading}</h3>
-          <ul className="text-gray-400 space-y-2 mt-2">
-            {footerData.footer.mainFooterSection.categories.items.map((category, index) => (
-              <li key={index}>{category}</li>
-            ))}
-          </ul>
-        </div>
 
         {/* Quick Links */}
         <div>
           <h3 className="font-semibold">{footerData.footer.mainFooterSection.quickLinks.heading}</h3>
           <ul className="text-gray-400 space-y-2 mt-2">
-            {footerData.footer.mainFooterSection.quickLinks.links.map((link, index) => (
-              <li key={index} className={link.includes("Grasfam") ? "flex items-center gap-1" : ""}>
-                {link}
-              </li>
-            ))}
+            <li>
+                <Link to="/about" className="flex items-center gap-1">
+                About Grasfam →
+                </Link>
+            </li>
+            <li>
+                <Link to="/contact" className="flex items-center gap-1">
+                Contact →
+                </Link>
+            </li>
+
           </ul>
         </div>
 

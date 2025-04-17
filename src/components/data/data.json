@@ -181,9 +181,9 @@
       "title" : "Find Your Perfect Journey – Affordable & Transparent Pricing!",
       "subTitle" : "Choose the best travel package that suits your budget and adventure style",
       "pricingCards" :[{
-        "name": "Budget Trip","button" : "Choose Plan", "price" :"$200", "icon": "/assets/pricingPage/budget.png", "include" : ["✔ 3 Destinations" ,"✔ Hotel & Transport Included", "✔ Travel Guide & Assistance", "✔ Standard Itinerary"]},
-        {"name": "Standard Trip", "button" : "Choose Plan", "price" : "$500", "icon": "/assets/pricingPage/standard.png", "include" : ["✔ 5 Destinations" , "✔ Premium Hotel & Transport", "✔ Exclusive Guided Tours", "✔ Customized Itinerary", "✔ Travel Insurance", ""]},
-        {"name": "Luxury Trip", "button" : "Choose Plan", "price" : "$1000", "icon": "/assets/pricingPage/luxury.png", "include" : ["✔ Unlimited Destinations", "✔ 5-Star Hotels & Private Transport", "✔ VIP Travel Concierge", "✔ Fully Custom Itinerary", "✔ Premium Travel Insurance", "✔ Group Discounts"]}
+        "name": "Budget Trip","button" : "Choose Plan", "price" :"$200", "icon": "/assets/pricingPage/budget.png", "include" : ["✔ 3 Destinations" ,"✔ Hotel & Transport Included", "✔ Travel Guide & Assistance", "✔ Standard Itinerary"], "tripType" : "budget"},
+        {"name": "Standard Trip", "button" : "Choose Plan", "price" : "$500", "icon": "/assets/pricingPage/standard.png", "include" : ["✔ 5 Destinations" , "✔ Premium Hotel & Transport", "✔ Exclusive Guided Tours", "✔ Customized Itinerary", "✔ Travel Insurance", ""], "tripType":"standard"},
+        {"name": "Luxury Trip", "button" : "Choose Plan", "price" : "$1000", "icon": "/assets/pricingPage/luxury.png", "include" : ["✔ Unlimited Destinations", "✔ 5-Star Hotels & Private Transport", "✔ VIP Travel Concierge", "✔ Fully Custom Itinerary", "✔ Premium Travel Insurance", "✔ Group Discounts"], "tripType": "luxury"}
       ]
     },
     "contactPage":{
@@ -214,8 +214,7 @@
   "mainFooterSection": {
     "logo": {
       "src": "/assets/logo/Grasfam.svg",
-      "alt": "Grasfam",
-      "description": "Aliquam rhoncus ligula est, non pulvinar elit convallis nec."
+      "alt": "Grasfam"
     },
     "categories": {
       "heading": "Top 4 Category",
@@ -224,8 +223,7 @@
     "quickLinks": {
       "heading": "Quick Links",
       "links": [
-        "About",
-        "Grasfam →",
+        "About Grasfam →",
         "Contact"
       ]
     },

@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdOutlineAlternateEmail, MdDriveFileRenameOutline } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
 
-
-export default function FormValidation({setShowAlert}) {
+export default function FormValidation({ setShowAlert, selectedTrip }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-    trip: ""
+    trip: selectedTrip || ""
   });
 
   const tripOptions = [
@@ -18,71 +17,56 @@ export default function FormValidation({setShowAlert}) {
   ];
 
   const [errors, setErrors] = useState({});
-
   const [focusedInput, setFocusedInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      trip: selectedTrip
+    }));
+  }, [selectedTrip]);
+
   const validate = () => {
     let newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Email is not valid";
     }
-    if (!formData.message.trim()) {
-      newErrors.message = "Please send a message!";
-    }
-    if (!formData.trip) {
-      newErrors.trip = "Please select a trip type";
-    }
 
+    if (!formData.trip) newErrors.trip = "Please select a trip type";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validate()) return;
 
-const handleSubmit = (e)=>{
-    e.preventDefault()
-    if(!validate()){
-      return;
-    }
     setIsLoading(true);
-    const url = "https://script.google.com/macros/s/AKfycby5DFE--d1StG5Tk9AIrAQaIPyZdEgFjO587TU2PDs57FbBQ1hMuXFGSU8pGiEvmker7w/exec"
-    fetch(url,{
-      method:"POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body:(`formType=formA&` +
-    `Name=${e.target.name.value}&` +
-    `Email=${e.target.email.value}&` +
-    `Pesan=${e.target.message.value}&` +
-    `Trip=${e.target.trip.value}`)})
-      .then(res=>res.text())
-      .then(()=>{ 
-        setShowAlert(true)
-        setTimeout(function(){
-          setShowAlert(false)
-        }, 3000)
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-          trip: ""
-        });
-        
-      
-    }).catch(error=>console.log(error))
-    .finally(()=>(setIsLoading(false)));
+    const url = "https://script.google.com/macros/s/AKfycby5DFE--d1StG5Tk9AIrAQaIPyZdEgFjO587TU2PDs57FbBQ1hMuXFGSU8pGiEvmker7w/exec";
 
-    
-  
-  }
-  
-  
-  
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body:
+        `formType=formA&` +
+        `Name=${formData.name}&` +
+        `Email=${formData.email}&` +
+        `Pesan=${formData.message}&` +
+        `Trip=${formData.trip}`
+    })
+      .then((res) => res.text())
+      .then(() => {
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
+        setFormData({ name: "", email: "", message: "", trip: "" });
+      })
+      .catch((error) => console.log(error))
+      .finally(() => setIsLoading(false));
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -92,21 +76,19 @@ const handleSubmit = (e)=>{
     }));
   };
 
-
   return (
     <div className="p-4 sm:p-6 w-full max-w-md mx-auto my-10 bg-white/40 backdrop-blur-md rounded-md shadow-md">
       <h2 className="text-lg font-bold text-white mt-4 mb-4 text-center">BOOK NOW!</h2>
-  
+
       <form id="form" className="w-full pb-2" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-4">
-          {/* Name Field */}
+
+          {/* Name */}
           <div>
             <label className="block text-sm font-medium text-white">Name</label>
             <div className="relative">
               <MdDriveFileRenameOutline
-                className={`absolute right-3 bottom-2 text-xl transition-colors ${
-                  focusedInput === "name" ? "text-blue-500" : "text-white"
-                }`}
+                className={`absolute right-3 bottom-2 text-xl ${focusedInput === "name" ? "text-blue-500" : "text-white"}`}
               />
               <input
                 type="text"
@@ -122,14 +104,12 @@ const handleSubmit = (e)=>{
             {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
           </div>
 
-          {/* Email Field */}
+          {/* Email */}
           <div>
             <label className="block text-sm font-medium text-white">Email</label>
             <div className="relative">
               <MdOutlineAlternateEmail
-                className={`absolute right-3 bottom-2 text-xl transition-colors ${
-                  focusedInput === "email" ? "text-blue-500" : "text-white"
-                }`}
+                className={`absolute right-3 bottom-2 text-xl ${focusedInput === "email" ? "text-blue-500" : "text-white"}`}
               />
               <input
                 type="email"
@@ -145,14 +125,12 @@ const handleSubmit = (e)=>{
             {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
           </div>
 
-          {/* Message Field */}
+          {/* Message */}
           <div>
             <label className="block text-sm font-medium text-white">Message</label>
             <div className="relative">
               <IoIosContact
-                className={`absolute right-3 bottom-2 text-xl transition-colors ${
-                  focusedInput === "message" ? "text-blue-500" : "text-white"
-                }`}
+                className={`absolute right-3 bottom-2 text-xl ${focusedInput === "message" ? "text-blue-500" : "text-white"}`}
               />
               <input
                 type="text"
@@ -168,7 +146,7 @@ const handleSubmit = (e)=>{
             {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
           </div>
 
-          {/* Trip List Dropdown */}
+          {/* Trip Dropdown */}
           <div>
             <label className="block text-sm font-medium text-white">Trip Type</label>
             <select
@@ -187,19 +165,21 @@ const handleSubmit = (e)=>{
             {errors.trip && <p className="text-red-500 text-sm">{errors.trip}</p>}
           </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-blue-500 text-white p-3 rounded hover:bg-blue-600 transition mt-4"
           >
             Submit
           </button>
-      {/* LOADING ALERT */}
-      {isLoading && (
-          <div className="mt-2 flex items-center gap-2 text-sm text-white">
-          <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
-          in the process of sending data
-        </div>
-      )}
+
+          {/* Loading */}
+          {isLoading && (
+            <div className="mt-2 flex items-center gap-2 text-sm text-white">
+              <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+              in the process of sending data
+            </div>
+          )}
         </div>
       </form>
     </div>

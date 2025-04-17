@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-slate-100 border-b flex-row-reverse shadow-md border-[#E9EAF0] px-8 py-5 flex justify-between items-center fixed right-0 left-0 mb-7 z-50">
+      <nav className="bg-slate-100 border-b flex shadow-md border-[#E9EAF0] px-8 py-5 justify-between items-center fixed right-0 left-0 mb-7 z-50">
         {/* Logo */}
         <div className="ms-5 flex-shrink-0">
           <img src={logo} alt="LOGO" className="h-8 scale-300 w-auto me-5" />
