@@ -37,7 +37,7 @@ const handleSubmit = (e)=>{
       return;
     }
     setIsLoading(true)
-    const url = "https://script.google.com/macros/s/AKfycby5DFE--d1StG5Tk9AIrAQaIPyZdEgFjO587TU2PDs57FbBQ1hMuXFGSU8pGiEvmker7w/exec"
+    const url = "https://script.google.com/macros/s/AKfycbw6BhzmJA0-hR5XVAxWX_CIwkVEz1Ai5PgSuDjel3RuwbC5XSYxOpYCedW3O8CrLkzU9g/exec"
     fetch(url,{
       method:"POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },

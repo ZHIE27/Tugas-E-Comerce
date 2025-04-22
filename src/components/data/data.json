@@ -230,10 +230,10 @@
     "support": {
       "heading": "Support",
       "links": [
-        "Help Center",
-        "FAQs",
-        "Terms & Conditions",
-        "Privacy Policy"
+        {"label" : "Help Center", "path" : "/help-center"},
+        {"label" : "FAQs", "path" : "/FAQs"},
+        {"label" : "Terms & Condition", "path" : "/terms&condition"},
+        {"label" : "Privacy Policy", "path" : "/privacy-policy"}
       ],
       "appDownload": {
         "heading": "Download Our App",
@@ -255,5 +255,134 @@
   "bottomFooter": {
     "text": "© 2025 - Grasfam. Designed by Grasfam. All rights reserved."
   }
+    },
+
+  "helpCenter":
+  [
+    {
+      "category": "Booking & Payment",
+      "items": [
+        {
+          "question": "How to book a travel package?",
+          "answer": "You can book a travel package directly on our website by selecting the destination, date, and number of participants, then follow the checkout process."
+        },
+        {
+          "question": "What payment methods are available?",
+          "answer": "We accept payments via bank transfer, credit card, and e-wallets such as OVO, DANA, and GoPay."
+        },
+        {
+          "question": "How to use a discount voucher?",
+          "answer": "Enter your voucher code at checkout in the 'Use Voucher' section before proceeding with payment."
+        },
+        {
+          "question": "How do I confirm my payment?",
+          "answer": "After successful payment, you will receive a confirmation email. You can also check your booking status in your account dashboard."
+        }
+      ]
+    },
+    {
+      "category": "Before Departure",
+      "items": [
+        {
+          "question": "What should I prepare before departure?",
+          "answer": "Make sure to bring your official ID, booking confirmation, appropriate clothing, and any personal medications if needed."
+        },
+        {
+          "question": "What is the cancellation & refund policy?",
+          "answer": "Cancellations can be made up to 7 days before departure. Refunds are subject to administrative fees according to our policy."
+        },
+        {
+          "question": "Can I change my travel date?",
+          "answer": "Date changes can be requested at least 5 days before departure by contacting our customer support."
+        },
+        {
+          "question": "Is travel insurance included?",
+          "answer": "Some packages include insurance. Details are available in the package description or by contacting our support team."
+        }
+      ]
+    },
+    {
+      "category": "During the Trip",
+      "items": [
+        {
+          "question": "Who to contact in case of emergency during the trip?",
+          "answer": "We provide a 24/7 emergency contact number included in your travel voucher."
+        },
+        {
+          "question": "What if I get separated from the group?",
+          "answer": "Immediately contact our tour guide or emergency contact number. We will assist you in rejoining the group at the next meeting point."
+        },
+        {
+          "question": "Can I get help during the tour?",
+          "answer": "Our guides and team are available to assist you with minor medical needs, local transport, and destination information during the tour."
+        }
+      ]
     }
+  ],
+
+  "faqs":{
+    "title": "Frequently Asked Questions",
+  "questions": [
+    {
+      "question": "How to book a trip on Grasfam?",
+      "answer": "Choose your desired package from the pricing page and follow the checkout process."
+    },
+    {
+      "question": "What payment methods are accepted?",
+      "answer": "We accept bank transfer, credit/debit cards, and selected e-wallets."
+    },
+    {
+      "question": "Can I cancel a booking and get a refund?",
+      "answer": "Yes, please read our refund policy on the Terms & Conditions page."
+    },
+    {
+      "question": "Do I get a voucher after my first booking?",
+      "answer": "Yes! First-time bookings are eligible for a $50 voucher or 50% discount on the next trip. Terms & conditions apply."
+    }
+  ],
+  "contact": {
+    "title": "Still need help?",
+    "description": "Our team is ready to support you. Contact us via:",
+    "email": {
+      "label": "📧",
+      "value": "admin@grasfam.com",
+      "link": "mailto:admin@grasfam.com"
+    },
+    "whatsapp": {
+      "label": "📞",
+      "value": "0895-1923-5409"
+    },
+    "address": {
+      "label": "🏢",
+      "value": "JL. Nusantara V No.7, Cimahi, Indonesia"
+    },
+    "hours": {
+      "label": "🕘",
+      "value": "09:00 - 20:00 (Mon - Sat)"
+    }
+  }
+  },
+  "privacy":{
+    "title": "Privacy Policy",
+    "description": "Your privacy is important to us. This policy explains how Grasfam collects, uses, and protects your data.",
+    "policyPoints": [
+      "We collect only essential information needed for bookings and customer support.",
+      "Your personal data will not be shared with third parties without consent.",
+      "We use secure protocols to protect your information.",
+      "You can contact us at any time to request data access or deletion."
+    ]
+  },
+  "terms":
+  {
+    "title": "Terms & Conditions",
+    "description": "By booking through Grasfam, you agree to the following terms:",
+    "termsPoints": [
+      "All bookings are subject to availability and confirmation.",
+      "Payments must be completed within 24 hours to secure reservations.",
+      "Cancellation and refund policies apply as stated in the Refund section.",
+      "Travelers are responsible for ensuring they have valid travel documents."
+    ]
+  }
+  
+  
 }

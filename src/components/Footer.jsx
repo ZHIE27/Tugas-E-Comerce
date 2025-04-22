@@ -25,7 +25,7 @@ const Footer = () => {
             {showButtonFooter && 
               <button
                 onClick={()=>handleNavigate("/pricing#form")}
-                className={`  bg-red-500 px-5 py-2 rounded-lg font-semibold`}
+                className={` cursor-pointer bg-red-500 px-5 py-2 rounded-lg font-semibold`}
               >
                 Join
               </button>
@@ -33,7 +33,7 @@ const Footer = () => {
             {showButtonFooter &&
               <button
                 onClick={()=> handleNavigate("/pricing#price")}
-                className={` bg-gray-700 px-5 py-2 rounded-lg font-semibold`}
+                className={` bg-gray-700 cursor-pointer px-5 py-2 rounded-lg font-semibold`}
               >
                 Browse All Travel
               </button>
@@ -59,12 +59,12 @@ const Footer = () => {
           <h3 className="font-semibold">{footerData.footer.mainFooterSection.quickLinks.heading}</h3>
           <ul className="text-gray-400 space-y-2 mt-2">
             <li>
-                <Link to="/about" className="flex items-center gap-1">
+                <Link to="/about" className="flex cursor-pointer items-center gap-1">
                 About Grasfam →
                 </Link>
             </li>
             <li>
-                <Link to="/contact" className="flex items-center gap-1">
+                <Link to="/contact" className="flex cursor-pointer items-center gap-1">
                 Contact →
                 </Link>
             </li>
@@ -77,7 +77,7 @@ const Footer = () => {
           <h3 className="font-semibold">{footerData.footer.mainFooterSection.support.heading}</h3>
           <ul className="text-gray-400 space-y-2 mt-2">
             {footerData.footer.mainFooterSection.support.links.map((link, index) => (
-              <li key={index}>{link}</li>
+              <li  key={index} onClick={()=> handleNavigate(link.path)} className="cursor-pointer">{link.label}</li>
             ))}
           </ul>
           <div className="mt-4">
