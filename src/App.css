@@ -1,7 +1,36 @@
-* {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: black;
+
+
+
+/* WHATSAPP FLOATING BUTTON STYLE */
+.whatsapp-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
+
+.whatsapp-button:hover {
+  background-color: #128C7E;
+  transform: scale(1.1);
+}
+
+.whatsapp-icon {
+  font-size: 30px;
+}
+
+.whatsapp-label {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+/* END */

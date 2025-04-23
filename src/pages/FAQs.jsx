@@ -5,7 +5,7 @@ const FAQs = () => {
   const { title, questions, contact } = data.faqs;
 
   return (
-    <div className="min-h-max bg- px-4 py-10 text-gray-800">
+    <div className="min-h-max bg-gray-50 px-4 py-10 text-gray-800">
       <div className="max-w-4xl mx-auto flex flex-col gap-6">
         <h1 className="text-3xl font-bold">{title}</h1>
         <div className="space-y-4">

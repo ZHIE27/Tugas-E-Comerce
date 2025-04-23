@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import Navbar from "./components/Navbar";
+
 import Home from "./pages/Home";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
@@ -10,6 +11,7 @@ import HelpCenter from "./pages/HelpCenter"
 import FAQs from "./pages/FAQs";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/PrivacyPolicy";
+import WhatsAppButton from "./components/whatsappButton";
 const LazyFooter = lazy(() => import("./components/Footer"));
 
 const ScrollToTop = () => {
@@ -50,6 +52,7 @@ const App = () => {
         <Route path="/terms&condition" element={<Terms />} />
         <Route path="/privacy-policy" element={<Privacy />} />
       </Routes>
+      <WhatsAppButton/>
       <Suspense fallback={<div>Loading Footer...</div>}>
         <LazyFooter />
       </Suspense>

@@ -4,7 +4,7 @@ import Icon from "/assets/destination/location.svg";
 const Destination = () => {
   return (
     // POPULAR DESTINATION
-    <div className="container bg-[#F2EFE7] shadow-md w-full lg:p-4 min-h-[50vh] h-auto">
+    <div className="container bg-[#F2EFE7] shadow-md w-full lg:p-4 min-h-max h-auto">
       <div className="flex flex-col md:flex-row items-center justify-between px-4">
         <div className="flex items-center md:items-baseline text-center md:text-left">
           <div>
@@ -19,11 +19,11 @@ const Destination = () => {
       </div>
 
       {/* LIST DESTINASI */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
         {data.destination.listDestination.map((data, index) => (
           <div
             key={index}
-            className="relative w-full sm:w-[180px] md:w-[200px] cursor-pointer border-white border-2 h-[220px] sm:h-[230px] md:h-[250px] group m-2 sm:m-3 md:m-4 overflow-hidden rounded-lg"
+            className="relative w-full sm:w-[180px] md:w-[200px] cursor-pointer border-white border-2 h-[220px] sm:h-[230px] md:h-[250px] group sm:m-3 md:m-4 overflow-hidden rounded-lg"
           >
             {/* efek zoom */}
             <div

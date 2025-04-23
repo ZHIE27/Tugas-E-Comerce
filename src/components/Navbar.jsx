@@ -37,14 +37,14 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-slate-100 border-b flex shadow-md border-[#E9EAF0] px-8 py-5 justify-between items-center fixed right-0 left-0 mb-7 z-50">
+      <nav className="bg-slate-100 border-b flex justify-start shadow-md border-[#E9EAF0] px-8 py-5 items-center fixed right-0 left-0 mb-7 z-50">
         {/* Logo */}
         <div className="ms-5 flex-shrink-0">
-          <img src={logo} alt="LOGO" className="h-8 scale-300 w-auto me-5" />
+          <img src={logo} alt="LOGO" className="h-8 scale-300 relative top-1 w-auto me-5" />
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden ms-30 md:flex gap-8">
           {data.navbar.links.map((link, index) => {
             const path = link.toLowerCase() === "home" ? "/" : `/${link.toLowerCase().replace(/\s+/g, "-")}`;
             const isActive = active === link;
@@ -75,7 +75,7 @@ export default function Navbar() {
 
         {/* Hamburger Menu */}
         <button
-          className="md:hidden flex flex-col space-y-1.5 p-2 rounded focus:outline-none z-50"
+          className="md:hidden absolute right-6 flex flex-col space-y-1.5 p-2 rounded focus:outline-none z-50"
           onClick={() => setIsOpen(!isOpen)}
         >
           <motion.span
