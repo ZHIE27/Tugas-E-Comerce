@@ -13,7 +13,7 @@ const WhatsAppButton = ({
   const location = useLocation();
 
   useEffect(() => {
-    const visiblePaths = ["/home", "/about", "/contact", "/pricing"];
+    const visiblePaths = ["/", "/about", "/contact", "/pricing"];
     setShowButton(visiblePaths.includes(location.pathname));
   }, [location]);
 
