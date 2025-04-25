@@ -10,7 +10,13 @@
         "icon": "/assets/homeAsset/paperplane.png"
     },
     "navbar": {
-        "links" : ["Home", "Contact", "About", "Pricing"]
+        "links" : [
+          {"name": "Home", "icon":"/assets/navbar/home.png"},
+          {"name": "Contact", "icon":"/assets/navbar/contact.png"},
+          {"name": "About", "icon":"/assets/navbar/about.png"},
+          {"name": "Pricing", "icon":"/assets/navbar/pricing.png"}],
+        "submenus" : [{"name" : "Our Story", "path" : "#our-story", "icon": "/assets/navbar/story.png"},
+                      {"name" : "Our Vision", "path": "#our-vision", "icon": "/assets/navbar/vision.png"}]
     },
     "bestServices": {
         "title": "We Offer Best Services",

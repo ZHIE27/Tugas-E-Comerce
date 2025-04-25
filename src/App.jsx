@@ -1,7 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import Navbar from "./components/Navbar";
-
 import Home from "./pages/Home";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
@@ -15,11 +14,13 @@ import WhatsAppButton from "./components/whatsappButton";
 const LazyFooter = lazy(() => import("./components/Footer"));
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
+  const { pathname, hash } = useLocation();
+  
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 };

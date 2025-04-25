@@ -4,7 +4,7 @@ const Terms = () => {
   const { title, description, termsPoints } = termsData.terms;
 
   return (
-    <div className="md:min-h-screen bg-gray-50 flex items-center px-4 py-10 text-gray-800">
+    <div className="min-h-max bg-gray-50 flex mt-4 px-4 py-10 text-gray-800">
       <div className="max-w-4xl mx-auto flex flex-col gap-6">
         <h1 className="text-3xl font-bold">{title}</h1>
         <p className="text-gray-600">{description}</p>

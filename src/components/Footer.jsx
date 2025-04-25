@@ -14,7 +14,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-[#1D2026] min-h-max text-white">
+    <footer className="bg-[#1D2026] min-h-screen lg:min-h-[65vh] relative bottom-0 text-white">
       {/* Top Call to Action */}
       <div className="border-b border-gray-700 py-10 text-center">
         <h2 className="text-xl md:text-2xl font-bold">
