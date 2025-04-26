@@ -95,7 +95,6 @@ export default function Navbar() {
                         to={`/about${submenu.path}`}
                         className="block px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100"
                         onClick={() => {
-                          // handleNavigate(submenu.path)
                           setActive(submenu.name);
                           localStorage.setItem("activeLink", submenu.name);
                           window.scrollTo(0, 0);
