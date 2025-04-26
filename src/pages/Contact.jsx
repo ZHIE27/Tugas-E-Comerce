@@ -80,15 +80,15 @@ const handleSubmit = (e)=>{
     <div className="flex flex-col lg:flex-row w-full min-h-max">
             {/* ALERT */}
             {showAlert && (
-                <div className="fixed top-19 right-5 bg-blue-500 text-white px-4 py-2 rounded shadow-lg transition-transform transform scale-100 animate-fade-in z-50">
+                <div className="fixed top-19 right-5 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded shadow-lg transition-all duration-300 transform scale-100 animate-fade-in z-50">
                 🎉 Form submitted successfully!
               </div>
       )}
       {/* FORM SECTION */}
-      <div className="w-full max-w-[1200px] relative py-5 bg-[#FFF5E4] pt-20 flex items-center justify-center p-6">
-        <div className="bg-white w-full max-w-lg p-7 shadow-md rounded-lg">
+      <div className="w-full max-w-[1200px] relative py-5 bg-gradient-to-br from-[#FFF5E4] to-[#FFE8C8] pt-20 flex items-center justify-center p-6">
+        <div className="bg-white w-full max-w-lg p-7 shadow-lg rounded-lg transition-all duration-300 hover:shadow-xl">
           <div className="contact w-full">
-            <h1 className="text-[2rem] md:text-[2.5rem] text-gray-900 font-bold">
+            <h1 className="text-[2rem] md:text-[2.5rem] font-bold animate-gradient bg-gradient-to-r from-gray-900 via-blue-600 to-gray-900 bg-[length:200%_auto] bg-clip-text text-transparent">
               {data.contactPage.title[0]}
             </h1>
             <p className="text-slate-700 font-semibold">{data.contactPage.title[1]}</p>
@@ -102,7 +102,7 @@ const handleSubmit = (e)=>{
               value={formData.name}
               onChange={handleChange}
               placeholder="Name"
-              className="w-full border-b border-black focus:outline-none focus:border-blue-500 transition duration-300 p-2"
+              className="w-full border-b border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 p-2 hover:border-gray-400"
             />
             {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
 
@@ -113,7 +113,7 @@ const handleSubmit = (e)=>{
               value={formData.email}
               onChange={handleChange}
               placeholder="Email"
-              className="w-full mt-6 border-b border-black focus:outline-none focus:border-blue-500 transition duration-300 p-2"
+              className="w-full mt-6 border-b border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 p-2 hover:border-gray-400"
             />
             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
 
@@ -124,13 +124,13 @@ const handleSubmit = (e)=>{
               onChange={handleChange}
               placeholder="Message"
               rows="4"
-              className="w-full mt-6 border-b border-black focus:outline-none focus:border-blue-500 transition duration-300 p-2 resize-none"
+              className="w-full mt-6 border-b border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 p-2 resize-none hover:border-gray-400"
             />
             {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
             {/* BUTTON */}
             <button
               type="submit"
-              className="bg-gray-900 py-2 hover:bg-gray-700 text-white rounded-md mt-6 w-full"
+              className="bg-gradient-to-r from-gray-900 to-gray-700 py-2 hover:from-gray-800 hover:to-gray-600 text-white rounded-md mt-6 w-full transition-all duration-300 transform hover:scale-[1.02]"
             >
               {data.contactPage.button}
             </button>
@@ -146,13 +146,13 @@ const handleSubmit = (e)=>{
       </div>
 
       {/* INFO SECTION */}
-      <div className="relative w-full lg:w-[45%] min-h-[350px] bg-[#FFA725] flex items-center justify-center p-6">
-        <div className="w-full max-w-lg bg-gray-900 p-7 rounded-lg shadow-md lg:absolute lg:-left-[20%] lg:top-[15%]">
-          <h1 className="text-[1.8rem] md:text-[2rem] mb-4 font-semibold text-slate-100">
+      <div className="relative w-full lg:w-[45%] min-h-[350px] bg-gradient-to-br from-[#FFA725] to-[#FF8C00] flex items-center justify-center p-6">
+        <div className="w-full max-w-lg bg-gradient-to-br from-gray-900 to-gray-800 p-7 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl lg:absolute lg:-left-[20%] lg:top-[15%]">
+          <h1 className="text-[1.8rem] md:text-[2rem] mb-4 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-300">
             {data.contactPage.infoTilte}
           </h1>
           {data.contactPage.info.map((info, index) => (
-            <div key={index} className="text-slate-100 flex mb-3 items-center">
+            <div key={index} className="text-slate-100 flex mb-3 items-center transition-all duration-300 hover:translate-x-2">
               <img src={info.icon} className="w-[20px] h-[20px] filter invert mr-3" alt="" />
               <p>{info.name}</p>
             </div>
