@@ -49,7 +49,7 @@ const About = () => {
 
       {/* OUR VISION */}
       <section id="our-vision" className="w-full flex flex-col md:flex-row p-7 justify-around lg:justify-center items-center bg-white min-h-screen">
-        <div className="w-full md:w-xl flex items-center justify-center h-80 md:h-screen">
+        <div className="w-full md:w-xl flex relative right-10 items-center justify-center h-80 md:h-screen">
           <img className="w-60 md:w-80 h-60 md:h-80" src={data.aboutPage.icon2} alt="vision" />
         </div>
         <div className="text-center shadow-lg w-full md:w-xl p-6 lg:min-h-[350px] rounded-md">

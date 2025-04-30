@@ -95,7 +95,7 @@ const Home = () => {
       </header>
 
       {/* Lazy Loaded Components */}
-      <LazyComponent Component={Destination} className="lg:px-36 items-center justify-center px-7 bg-[#F5F5F5] py-4 lg:flex lg:items-center lg:h-screen relative" />
+      <LazyComponent Component={Destination} className="lg:px-36 items-center justify-center px-7 bg-[#F5F5F5] py-7 lg:flex lg:items-center lg:h-screen relative" />
       <LazyComponent Component={BestServices} className="mb-20" />
       <LazyComponent Component={DiscountFirstTravel} className="lg:px-30 px-7 my-20 relative" />
       <LazyComponent Component={RecentCourses} className="px-10 min-h-auto" />

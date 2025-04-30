@@ -61,7 +61,7 @@ const Pricing = () => {
                       {card.name}
                     </h1>
                     <img
-                      className="w-8 h-8 ml-3"
+                      className="w-8 h-8 ml-1"
                       src={card.icon}
                       alt={card.icon}
                     />

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FaChevronDown } from "react-icons/fa";
 import logo from "/assets/logo/Grasfam.svg";
 import data from "./data/data.json";
 import "../App.css"
@@ -8,18 +9,32 @@ export default function Navbar() {
   const [active, setActive] = useState(localStorage.getItem("activeLink") || "Home");
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const menuButtonRef = useRef(null);
   useEffect(() => {
-    const currentPath =
-      location.pathname === "/"
-        ? "Home"
-        : data.navbar.links.find(
-            (link) => `/${link.name.toLowerCase().replace(/\s+/g, "-")}` === location.pathname
-          ) || "Home";
-
+    const handleResize = () => {
+      if (window.innerWidth >= 768) { 
+        setIsOpen(false);
+      }
+    };
+  
+    window.addEventListener("resize", handleResize);
+  
+    // bersihkan event listener saat komponen unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  useEffect(() => {
+    const foundLink = data.navbar.links.find(
+      (link) => `/${link.name.toLowerCase().replace(/\s+/g, "-")}` === location.pathname
+    );
+    const currentPath = location.pathname === "/" ? "Home" : foundLink?.name || "Home";
+  
     setActive(currentPath);
     localStorage.setItem("activeLink", currentPath);
   }, [location.pathname]);
+  
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
@@ -37,6 +52,7 @@ export default function Navbar() {
         !menuButtonRef.current.contains(event.target)
       ) {
         setIsOpen(false);
+        setIsSubmenuOpen(false);
       }
     }
 
@@ -50,7 +66,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-slate-100 border-b flex justify-start shadow-md border-[#E9EAF0] px-8 py-5 items-center fixed right-0 left-0 mb-7 z-50">
+      <nav className="bg-slate-100 border-b flex justify-start shadow-md border-gray-400 px-8 py-5 items-center fixed right-0 left-0 mb-7 z-60">
         {/* Logo */}
         <div className="ms-5 flex-shrink-0">
           <img src={logo} alt="LOGO" className="h-8 scale-300 w-auto me-5" />
@@ -88,7 +104,7 @@ export default function Navbar() {
 
                 {/* Submenu Dropdown */}
                 {isAbout && (
-                  <div className="absolute top-5 left-0 mt-2 hidden group-hover:block bg-white shadow-md rounded w-40 z-50">
+                  <div className="absolute top-4 left-0 mt-2 hidden group-hover:block bg-white shadow-md rounded w-40 z-[-10]">
                     {data.navbar.submenus.map((submenu, index) => (
                       <Link
                         key={index}
@@ -145,37 +161,57 @@ export default function Navbar() {
       )}
 
       {/* Mobile Menu */}
-      <div
+            {/* Mobile Menu */}
+            <div
         ref={menuRef}
-        className={`fixed top-16 z-50 left-0 w-[80%] bg-slate-100 bg-opacity-50 backdrop-blur-lg shadow-md md:hidden flex flex-col items-start p-4 gap-4 rounded-r-lg transform transition-transform duration-300 ${
+        className={`fixed top-17 z-50 left-0 w-[80%] bg-slate-100 bg-opacity-50 backdrop-blur-lg shadow-md md:hidden flex flex-col items-start p-4 gap-4 rounded-r-lg transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {data.navbar.links.map((link, index) => (
           <div key={index} className="w-full">
-            <Link
-              to={
-                link.name.toLowerCase() === "home"
-                  ? "/"
-                  : `/${link.name.toLowerCase().replace(/\s+/g, "-")}`
-              }
-              className={`text-sm block w-full p-2 font-medium ${
-                active === link.name ? "text-cyan-700" : "text-gray-600"
-              } hover:bg-gray-300 rounded`}
-              onClick={() => {
-                setActive(link.name);
-                localStorage.setItem("activeLink", link);
-                setIsOpen(false);
-                window.scrollTo(0, 0);
-              }}
-            >
-              <div className="flex">
-                <img src={link.icon} className="w-[20px] me-3 h-[20px]" alt="icon" />{link.name}
-              </div>
-            </Link>
+            {/* Kalau About, jangan langsung tutup menu, kita toggle submenu */}
+            {link.name === "About" ? (
+              <button
+                className="flex items-center justify-between text-sm w-full p-2 border-b-[.5px] border-gray-400 font-medium text-gray-600 hover:bg-gray-300 rounded"
+                onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
+              >
+                <div className="flex items-center">
+                  <img src={link.icon} className="w-[20px] me-3 h-[20px]" alt="icon" />
+                  {link.name}
+                </div>
+                <FaChevronDown
+                  className={` ${
+                    isSubmenuOpen ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              </button>
+            ) : (
+              <Link
+                to={
+                  link.name.toLowerCase() === "home"
+                    ? "/"
+                    : `/${link.name.toLowerCase().replace(/\s+/g, "-")}`
+                }
+                className={`text-sm block w-full p-2 border-b-[.5px] border-gray-400 font-medium ${
+                  active === link.name ? "text-cyan-600" : "text-gray-600"
+                } hover:bg-gray-300 rounded`}
+                onClick={() => {
+                  setActive(link.name);
+                  localStorage.setItem("activeLink", link.name);
+                  setIsOpen(false);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <div className="flex items-center">
+                  <img src={link.icon} className="w-[20px] me-3 h-[20px]" alt="icon" />
+                  {link.name}
+                </div>
+              </Link>
+            )}
 
-            {/* Submenu in mobile */}
-            {link.name === "About" && isOpen && (
+            {/* Submenu About */}
+            {link.name === "About" && isSubmenuOpen && (
               <div className="ml-4 mt-2">
                 {data.navbar.submenus.map((submenu, index) => (
                   <Link
@@ -186,11 +222,13 @@ export default function Navbar() {
                       setActive(submenu.name);
                       localStorage.setItem("activeLink", submenu.name);
                       setIsOpen(false);
+                      setIsSubmenuOpen(false);
                       window.scrollTo(0, 0);
                     }}
                   >
-                    <div className="flex">
-                      <img className="w-[20px] h-[20px] me-3" src={submenu.icon} alt="icon" />{submenu.name}
+                    <div className="flex items-center">
+                      <img className="w-[20px] h-[20px] me-3" src={submenu.icon} alt="icon" />
+                      {submenu.name}
                     </div>
                   </Link>
                 ))}
@@ -199,6 +237,7 @@ export default function Navbar() {
           </div>
         ))}
       </div>
+
 
       <div className="w-full h-10"></div>
     </>

@@ -11,39 +11,38 @@
     },
     "navbar": {
         "links" : [
-          {"name": "Home", "icon":"/assets/navbar/home.png"},
-          {"name": "Contact", "icon":"/assets/navbar/contact.png"},
-          {"name": "About", "icon":"/assets/navbar/about.png"},
-          {"name": "Pricing", "icon":"/assets/navbar/pricing.png"}],
-        "submenus" : [{"name" : "Our Story", "path" : "#our-story", "icon": "/assets/navbar/story.png"},
-                      {"name" : "Our Vision", "path": "#our-vision", "icon": "/assets/navbar/vision.png"}]
+          {"name": "Home", "icon":"/assets/navbar/home.svg"},
+          {"name": "Contact", "icon":"/assets/navbar/contact.svg"},
+          {"name": "About", "icon":"/assets/navbar/about.svg"},
+          {"name": "Pricing", "icon":"/assets/navbar/pricing.svg"}],
+        "submenus" : [{"name" : "Our Story", "path" : "#our-story", "icon": "/assets/navbar/ourstory.svg"},
+                      {"name" : "Our Vision", "path": "#our-vision", "icon": "/assets/navbar/ourvision.svg"}]
     },
     "bestServices": {
         "title": "We Offer Best Services",
-        "iconTitle": "/assets/tourPackages/servicesicon.png",
-        "icon" : "/assets/tourPackages/plane2.png",
+        "iconTitle": "/assets/tourPackages/local.svg",
         "bgContent": "/assets/tourPackages/bg-cloud.jpg",
             "items": [
-            { "name": "Calculated Weather", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/satelite.png" },
-            { "name": "Best Flights", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/plane.png" },
-            { "name": "Local Events", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/microphone.png" },
-            { "name": "Customization", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/gear.png" }
+            { "name": "Calculated Weather", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/weather.svg" },
+            { "name": "Best Flights", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/plane.svg" },
+            { "name": "Local Events", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/event.svg" },
+            { "name": "Customization", "desc": "Built wicket longer admire do boton vanity itself go in it.", "icon": "/assets/tourPackages/service.svg" }
         ]
     },
     "discountVoucher": {
         "title": "Discount First Travel",
-        "icon": "/assets/discount/discounticon.png",
+        "icon": "/assets/discount/discounticon.svg",
         "voucher": [
         {
         "voucherTitle": "Free Voucher Worth $50",
-        "imgUrl": "/assets/discount/voucher.png",
+        "imgUrl": "/assets/discount/voucher.svg",
         "desc": "Book your first ticket and receive a Rp50,000 voucher for your next trip!",
         "discount": "$50 Voucher",
         "terms": "Voucher can be used for the next booking. Valid until the end of the month."
             },
             {
                 "voucherTitle": "50% Discount on First Booking!",
-                "imgUrl": "/assets/discount/voucher.png",
+                "imgUrl": "/assets/discount/voucher.svg",
                 "desc": "Get a 50% discount on your first travel ticket. Don't miss this opportunity!",
                 "discount": "50% Discount",
                 "terms": "Valid for first-time bookings only. Terms & conditions apply."
@@ -53,7 +52,7 @@
 
     "travelPackages": {
         "title" : "Current Promo Travel Packages",
-        "icon": "/assets/travelPackages/promoicon.png",
+        "icon": "/assets/travelPackages/promoicon.svg",
         "travel":[
         {
           "image": "/assets/travelPackages/beach.jpg",
@@ -104,7 +103,7 @@
         "subTitle": "Let's enjoy this heaven on earth",
         "rightTeks1":"Many places are very famous, clean, and will give very",
         "rightTeks2":"deep impression to visitor and will make them comeback.",
-        "icon" : "/assets/destination/icon.png",
+        "icon" : "/assets/destination/icon.svg",
         "listDestination":[
             {"name": "Bali Beach", "desc": "The beaches in Bali have stunning natural beauty", "imgURL": "/assets/destination/bali.jpg", "location": "Indonesia"},
             {"name": "Eiffel Tower", "desc": "The Eiffel Tower is an iron lattice tower located on the Champ de Mars in Paris", "imgURL": "/assets/destination/paris.jpg", "location": "Paris"},
@@ -118,7 +117,7 @@
         "button": "Start Travel",
         "listTitle": "Why Travel?",
         "tilte2": "Recomended Destination",
-        "icon": "/assets/whyTravel/icon.png",
+        "icon": "/assets/whyTravel/icon.svg",
         "recDestination": [
             {"name" : "Tropical Beach", "desc" : "Enjoy the beauty of the beach with white sand and clear blue water.", "imgUrl" : "/assets/whyTravel/tropicalbeach.jpg"},
             {"name": "Majestic Mountains", "desc": "Explore the majestic mountains with incredible views.", "imgUrl" : "/assets/whyTravel/majesticmountain.jpg" },
@@ -133,7 +132,7 @@
             ]
     },
     "topDestination": {
-        "icon": "/assets/",
+        "icon": "/assets/whyTravel/icon.svg",
         "title" :"Top Destinations to Visit",
         "footer": "Discover the best places to visit this season!",
         "span" : "Explore Now →",
@@ -176,8 +175,8 @@
       "desc" : "We are Grasfam, a travel service provider committed to providing the best travel experience at an affordable price. With an experienced team, we are ready to accompany your journey to your dream destination.",
       "ourStory" : "Our Story",
       "descStory" : "Founded in 2025, Grasfam was born from a passion for exploring the world and sharing unforgettable experiences with others. What started as a small group of travel enthusiasts has now grown into a trusted travel company, helping thousands of adventurers discover breathtaking destinations. In the early days, we focused on providing personalized travel experiences to a handful of destinations. Over time, our commitment to excellent service, transparency, and customer satisfaction allowed us to expand our offerings. Today, we provide a wide range of travel packages, from budget-friendly trips to luxury vacations, ensuring that every traveler finds the perfect journey.",
-      "icon1" : "/assets/aboutPage/ourstory.png",
-      "icon2" : "/assets/aboutPage/ourvision.png",
+      "icon1" : "/assets/aboutPage/ourstory.svg",
+      "icon2" : "/assets/aboutPage/ourvision.svg",
       "ourVision" : "Our Vision",
       "descVision" : "At Grasfam, our vision is to become a leading travel provider that inspires and enables people to explore the world effortlessly. We aim to create seamless, personalized, and unforgettable travel experiences that connect cultures, foster adventure, and bring joy to every journey. By continuously evolving and adapting to the needs of modern travelers, we strive to make dream vacations a reality for everyone."
     },
@@ -187,9 +186,9 @@
       "title" : "Find Your Perfect Journey – Affordable & Transparent Pricing!",
       "subTitle" : "Choose the best travel package that suits your budget and adventure style",
       "pricingCards" :[{
-        "name": "Budget Trip","button" : "Choose Plan", "price" :"$200", "icon": "/assets/pricingPage/budget.png", "include" : ["✔ 3 Destinations" ,"✔ Hotel & Transport Included", "✔ Travel Guide & Assistance", "✔ Standard Itinerary"], "tripType" : "budget"},
-        {"name": "Standard Trip", "button" : "Choose Plan", "price" : "$500", "icon": "/assets/pricingPage/standard.png", "include" : ["✔ 5 Destinations" , "✔ Premium Hotel & Transport", "✔ Exclusive Guided Tours", "✔ Customized Itinerary", "✔ Travel Insurance", ""], "tripType":"standard"},
-        {"name": "Luxury Trip", "button" : "Choose Plan", "price" : "$1000", "icon": "/assets/pricingPage/luxury.png", "include" : ["✔ Unlimited Destinations", "✔ 5-Star Hotels & Private Transport", "✔ VIP Travel Concierge", "✔ Fully Custom Itinerary", "✔ Premium Travel Insurance", "✔ Group Discounts"], "tripType": "luxury"}
+        "name": "Budget Trip","button" : "Choose Plan", "price" :"$200", "icon": "/assets/pricingPage/budget.svg", "include" : ["✔ 3 Destinations" ,"✔ Hotel & Transport Included", "✔ Travel Guide & Assistance", "✔ Standard Itinerary"], "tripType" : "budget"},
+        {"name": "Standard Trip", "button" : "Choose Plan", "price" : "$500", "icon": "/assets/pricingPage/standard.svg", "include" : ["✔ 5 Destinations" , "✔ Premium Hotel & Transport", "✔ Exclusive Guided Tours", "✔ Customized Itinerary", "✔ Travel Insurance", ""], "tripType":"standard"},
+        {"name": "Luxury Trip", "button" : "Choose Plan", "price" : "$1000", "icon": "/assets/pricingPage/luxury.svg", "include" : ["✔ Unlimited Destinations", "✔ 5-Star Hotels & Private Transport", "✔ VIP Travel Concierge", "✔ Fully Custom Itinerary", "✔ Premium Travel Insurance", "✔ Group Discounts"], "tripType": "luxury"}
       ]
     },
     "contactPage":{

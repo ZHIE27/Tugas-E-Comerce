@@ -7,11 +7,6 @@ const BestServices = () => {
       className="relative bg-cover bg-center mx-auto px-6 py-12 min-h-screen flex flex-col items-center"
     >
       {/* Heading */}
-      <img
-        src={data.bestServices.icon}
-        alt="plane"
-        className="w-32 hidden lg:block h-32 scale-125 absolute left-8 top-[455px]"
-      />
       <div className="text-center mt-6 mb-10">
         <h1 className="text-3xl font-bold text-gray-900 flex items-center">{data.bestServices.title}
         <img src={data.bestServices.iconTitle} className="w-[35px] ms-2 h-[35px]" />

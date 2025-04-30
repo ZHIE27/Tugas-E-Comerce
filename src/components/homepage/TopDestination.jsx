@@ -10,8 +10,10 @@ const TopDestination = () => {
     <section className="bg-[#FFFFFF] border border-[#E9EAF0] px-8 py-8">
 
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">{data.topDestination.title}</h2>
-
+        <div className="flex">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">{data.topDestination.title}</h2>
+          <img src={data.topDestination.icon} className="w-[35px] ms-2 h-[35px]" alt="icon" />
+        </div>
         {/* Grid Destinations */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {data.topDestination.destination.map((data, index) => (
