@@ -20,32 +20,20 @@ export default function FormValidation({ setShowAlert, selectedTrip }) {
   const downloadInvoice = async () => {
     if (!invoiceRef.current) return;
   
-    try {
-      const canvas = await html2canvas(invoiceRef.current, {
-        scale: 2,
-        useCORS: true
-      });
+    const canvas = await html2canvas(invoiceRef.current, {
+      scale: 2
+    });
   
-      canvas.toBlob((blob) => {
-        if (!blob) return;
+    const image = canvas.toDataURL("image/png");
   
-        const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = `invoice-${invoice?.id}.png`;
   
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = `invoice-${invoice.id}.png`;
-  
-        document.body.appendChild(link);
-        link.click();
-  
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-      }, "image/png");
-  
-    } catch (error) {
-      console.error("Download error:", error);
-    }
-  };git remote 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   //Dummy fungsi payement gateaway
   const [invoice, setInvoice] = useState(null);
